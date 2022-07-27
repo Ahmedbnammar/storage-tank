@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: linear-gradient(rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8)),url(bg.jfif);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .container{
+        width: 360px;
+        height: 560px;
+        margin: 8% auto;
+        background: whitesmoke;
+        border-radius: 1em;
+        position: relative;
+        overflow: hidden;
+
+        box-shadow: -3px -3px 5px rgba(255,255,255,0.05),
+        3px 3px 5px rgba(0,0,0,0.5);
+    }
+
+
+    h2{
+        text-align: center;
+        margin-bottom: 1.5em;
+        color: gray;
+        text-transform: capitalize;
+    }
+
+    .container form{
+        width: 17em;
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        transition: .5s all ease;
+    }
+
+
+    form input{
+        width: 100%;
+        padding: 10px 5px;
+        margin: 0.7em 0;
+        border: 0;
+        color: cyan;
+        font-weight: 500;
+        border-bottom: 0.1em solid gray;
+        outline: none;
+        background: transparent;
+    }
+
+    ::placeholder{
+        color: gray;
+    }
+
+    .btn{
+        width: 100%;
+        margin: 1.5em  auto;
+        text-align: center;
+    }
+
+    form button{
+        width: 45%;
+        height: 2.5em;
+        margin: 0 5px;
+        background: linear-gradient(50deg,blue,cyan);
+        border-radius: 5em;
+        border: 0;
+        outline: none;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 1em;
+        font-style: bold;
+        letter-spacing: 0.2em;
+    }
+
+
+    #form2{
+        left: 450px;
+    }
+
+    #form3{
+        left: 450px;
+    }
+
+    .step_row{
+        width: 360px;
+        height: 40px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        box-shadow:  0 -1px 5px -1px gray;
+        position: relative;
+    }
+
+    .step_col{
+        width: 120px;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+
+    #progress_bar{
+        position: absolute;
+        height: 100%;
+        width: 120px;
+        background: linear-gradient(50deg,blue,cyan);
+        transition: 0.5s all ease-in-out;
+    }
+
+    #progress_bar::after{
+        content: "";
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        position: absolute;
+        right: -20px;
+        top: 0;
+        border-left: 20px solid cyan;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multistep From</title>
+
+</head>
+<body>
+<div class="container">
+
+    <!-- form1 -->
+    <form method="post" id="form1">
+        <h2> create account </h2>
+        {{ form_start(form) }}
+        {{ form_row(form.InsideDiameterDiCorroded) }}
+        {{ form_row(form.tankHeight) }}
+        {{ form_row(form.materialOfConstruction) }}
+
+
+
+
+
+
+        <div class="btn">
+            <button type="button" id="next">
+                Next
+            </button>
+        </div>
+    </form>
+
+    <!-- form2 -->
+
+    <form method="post" action="" id="form2">
+        <h2> Personal Information </h2>
+        {{ form_row(form.corrosionAllowance) }}
+        {{ form_row(form.minSpecificGravityOfProduct) }}
+        {{ form_row(form.maxSpecificGravityOfProduct) }}
+
+
+
+        <div class="btn">
+
+            <button type="button" id="back1">
+                Back
+            </button>
+
+            <button type="button" id="next2">
+                Next
+            </button>
+        </div>
+    </form>
+
+    <!-- form3 -->
+
+    <form method="post"  action="" id="form3">
+        <h2> Login </h2>
+        {{ form_row(form.specificMinimumYieldStress) }}
+        {{ form_row(form.modulusOfElasticity) }}
+        {{ form_row(form.densityOfMaterial) }}
+        {{ form_row(form.roofLiveLoad) }}
+
+        <div class="btn">
+            <button type="button" id="back2">
+                Back
+            </button>
+
+            <button type="button" onclick="submitForms()">
+                Submit
+            </button>
+        </div>
+        {{ form_end(form) }}
+    </form>
+
+
+    <div class="step_row">
+        <div id="progress_bar"></div>
+
+        <div class="step_col">
+            <small>Step 1</small>
+        </div>
+
+        <div class="step_col">
+            <small>Step 2</small>
+        </div>
+
+        <div class="step_col">
+            <small>Step 3</small>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    var form1 = document.getElementById("form1");
+    var form2 = document.getElementById("form2");
+    var form3 = document.getElementById("form3");
+
+    var next2 = document.getElementById("next2");
+    var back1 = document.getElementById("back1");
+    var back2 = document.getElementById("back2");
+
+    var progress_bar = document.getElementById("progress_bar");
+
+    submitForms = function(){
+        document.getElementById("form1").submit();
+        document.getElementById("form2").submit();
+        document.getElementById("form3").submit();
+    }
+
+    next.onclick = function()
+    {
+        form1.style.left = "-450px";
+        form2.style.left = "40px";
+        progress_bar.style.width="240px";
+    }
+
+    back1.onclick = function()
+    {
+        form1.style.left = "40px";
+        form2.style.left = "450px";
+        progress_bar.style.width="120px";
+    }
+
+    next2.onclick = function()
+    {
+        form2.style.left = "-450px";
+        form3.style.left = "40px";
+        progress_bar.style.width="360px";
+    }
+
+    back2.onclick = function()
+    {
+        form2.style.left = "40px";
+        form3.style.left = "450px";
+        progress_bar.style.width="240px";
+    }
+</script>
+
+
+</body>
+</html>
