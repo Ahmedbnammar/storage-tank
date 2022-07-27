@@ -15,7 +15,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
 
-        return $this->render('bundles/EasyAdminBundle/index.html.twig');
+        return $this->render('bundles/EasyAdminBundle/index.html.twig.twig');
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
