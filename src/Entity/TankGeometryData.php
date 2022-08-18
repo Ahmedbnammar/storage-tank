@@ -252,6 +252,119 @@ class TankGeometryData
     #[ORM\Column(type: 'float', nullable: true)]
     private $postsWeight;
 
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $tde;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $dd;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $pdv;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $dp;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $dlh2;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $v12;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $va;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $vr;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $d12;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $hrain;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $adeck;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $vrain;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $vdisplacement;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $hrain2;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $t;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $alpha;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $q1;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $pr;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $e;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k1;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k2;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k31;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k41;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k32;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $k42;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $piw;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $pdir;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $ptir;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $ptor;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $pttp;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $ptbp;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $tpsa;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $ba;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $tpl;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $bpl;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $horwep;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $phir;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -1177,6 +1290,450 @@ class TankGeometryData
     public function setPostsWeight(?float $postsWeight): self
     {
         $this->postsWeight = $postsWeight;
+
+        return $this;
+    }
+
+    public function getTde(): ?float
+    {
+        return $this->tde;
+    }
+
+    public function setTde(?float $tde): self
+    {
+        $this->tde = $tde;
+
+        return $this;
+    }
+
+    public function getDd(): ?float
+    {
+        return $this->dd;
+    }
+
+    public function setDd(?float $dd): self
+    {
+        $this->dd = $dd;
+
+        return $this;
+    }
+
+    public function getPdv(): ?float
+    {
+        return $this->pdv;
+    }
+
+    public function setPdv(?float $pdv): self
+    {
+        $this->pdv = $pdv;
+
+        return $this;
+    }
+
+    public function getDp(): ?float
+    {
+        return $this->dp;
+    }
+
+    public function setDp(?float $dp): self
+    {
+        $this->dp = $dp;
+
+        return $this;
+    }
+
+    public function getDlh2(): ?float
+    {
+        return $this->dlh2;
+    }
+
+    public function setDlh2(?float $dlh2): self
+    {
+        $this->dlh2 = $dlh2;
+
+        return $this;
+    }
+
+    public function getV12(): ?float
+    {
+        return $this->v12;
+    }
+
+    public function setV12(?float $v12): self
+    {
+        $this->v12 = $v12;
+
+        return $this;
+    }
+
+    public function getVa(): ?float
+    {
+        return $this->va;
+    }
+
+    public function setVa(?float $va): self
+    {
+        $this->va = $va;
+
+        return $this;
+    }
+
+    public function getVr(): ?float
+    {
+        return $this->vr;
+    }
+
+    public function setVr(?float $vr): self
+    {
+        $this->vr = $vr;
+
+        return $this;
+    }
+
+    public function getD12(): ?float
+    {
+        return $this->d12;
+    }
+
+    public function setD12(?float $d12): self
+    {
+        $this->d12 = $d12;
+
+        return $this;
+    }
+
+    public function getHrain(): ?float
+    {
+        return $this->hrain;
+    }
+
+    public function setHrain(?float $hrain): self
+    {
+        $this->hrain = $hrain;
+
+        return $this;
+    }
+
+    public function getAdeck(): ?float
+    {
+        return $this->adeck;
+    }
+
+    public function setAdeck(?float $adeck): self
+    {
+        $this->adeck = $adeck;
+
+        return $this;
+    }
+
+    public function getVrain(): ?float
+    {
+        return $this->vrain;
+    }
+
+    public function setVrain(?float $vrain): self
+    {
+        $this->vrain = $vrain;
+
+        return $this;
+    }
+
+    public function getVdisplacement(): ?float
+    {
+        return $this->vdisplacement;
+    }
+
+    public function setVdisplacement(?float $vdisplacement): self
+    {
+        $this->vdisplacement = $vdisplacement;
+
+        return $this;
+    }
+
+    public function getHrain2(): ?float
+    {
+        return $this->hrain2;
+    }
+
+    public function setHrain2(?float $hrain2): self
+    {
+        $this->hrain2 = $hrain2;
+
+        return $this;
+    }
+
+    public function getT(): ?float
+    {
+        return $this->t;
+    }
+
+    public function setT(?float $t): self
+    {
+        $this->t = $t;
+
+        return $this;
+    }
+
+    public function getAlpha(): ?float
+    {
+        return $this->alpha;
+    }
+
+    public function setAlpha(?float $alpha): self
+    {
+        $this->alpha = $alpha;
+
+        return $this;
+    }
+
+    public function getQ1(): ?float
+    {
+        return $this->q1;
+    }
+
+    public function setQ1(?float $q1): self
+    {
+        $this->q1 = $q1;
+
+        return $this;
+    }
+
+    public function getPr(): ?float
+    {
+        return $this->pr;
+    }
+
+    public function setPr(?float $pr): self
+    {
+        $this->pr = $pr;
+
+        return $this;
+    }
+
+    public function getE(): ?float
+    {
+        return $this->e;
+    }
+
+    public function setE(?float $e): self
+    {
+        $this->e = $e;
+
+        return $this;
+    }
+
+    public function getK1(): ?float
+    {
+        return $this->k1;
+    }
+
+    public function setK1(?float $k1): self
+    {
+        $this->k1 = $k1;
+
+        return $this;
+    }
+
+    public function getK2(): ?float
+    {
+        return $this->k2;
+    }
+
+    public function setK2(?float $k2): self
+    {
+        $this->k2 = $k2;
+
+        return $this;
+    }
+
+    public function getK31(): ?float
+    {
+        return $this->k31;
+    }
+
+    public function setK31(?float $k31): self
+    {
+        $this->k31 = $k31;
+
+        return $this;
+    }
+
+    public function getK41(): ?float
+    {
+        return $this->k41;
+    }
+
+    public function setK41(?float $k41): self
+    {
+        $this->k41 = $k41;
+
+        return $this;
+    }
+
+    public function getK32(): ?float
+    {
+        return $this->k32;
+    }
+
+    public function setK32(?float $k32): self
+    {
+        $this->k32 = $k32;
+
+        return $this;
+    }
+
+    public function getK42(): ?float
+    {
+        return $this->k42;
+    }
+
+    public function setK42(?float $k42): self
+    {
+        $this->k42 = $k42;
+
+        return $this;
+    }
+
+    public function getPiw(): ?float
+    {
+        return $this->piw;
+    }
+
+    public function setPiw(?float $piw): self
+    {
+        $this->piw = $piw;
+
+        return $this;
+    }
+
+    public function getPdir(): ?float
+    {
+        return $this->pdir;
+    }
+
+    public function setPdir(?float $pdir): self
+    {
+        $this->pdir = $pdir;
+
+        return $this;
+    }
+
+    public function getPtir(): ?float
+    {
+        return $this->ptir;
+    }
+
+    public function setPtir(?float $ptir): self
+    {
+        $this->ptir = $ptir;
+
+        return $this;
+    }
+
+    public function getPtor(): ?float
+    {
+        return $this->ptor;
+    }
+
+    public function setPtor(?float $ptor): self
+    {
+        $this->ptor = $ptor;
+
+        return $this;
+    }
+
+    public function getPttp(): ?float
+    {
+        return $this->pttp;
+    }
+
+    public function setPttp(?float $pttp): self
+    {
+        $this->pttp = $pttp;
+
+        return $this;
+    }
+
+    public function getPtbp(): ?float
+    {
+        return $this->ptbp;
+    }
+
+    public function setPtbp(?float $ptbp): self
+    {
+        $this->ptbp = $ptbp;
+
+        return $this;
+    }
+
+    public function getTpsa(): ?float
+    {
+        return $this->tpsa;
+    }
+
+    public function setTpsa(?float $tpsa): self
+    {
+        $this->tpsa = $tpsa;
+
+        return $this;
+    }
+
+    public function getBa(): ?float
+    {
+        return $this->ba;
+    }
+
+    public function setBa(?float $ba): self
+    {
+        $this->ba = $ba;
+
+        return $this;
+    }
+
+    public function getTpl(): ?float
+    {
+        return $this->tpl;
+    }
+
+    public function setTpl(?float $tpl): self
+    {
+        $this->tpl = $tpl;
+
+        return $this;
+    }
+
+    public function getBpl(): ?float
+    {
+        return $this->bpl;
+    }
+
+    public function setBpl(?float $bpl): self
+    {
+        $this->bpl = $bpl;
+
+        return $this;
+    }
+
+    public function getHorwep(): ?float
+    {
+        return $this->horwep;
+    }
+
+    public function setHorwep(?float $horwep): self
+    {
+        $this->horwep = $horwep;
+
+        return $this;
+    }
+
+    public function getPhir(): ?float
+    {
+        return $this->phir;
+    }
+
+    public function setPhir(?float $phir): self
+    {
+        $this->phir = $phir;
 
         return $this;
     }
