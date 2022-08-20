@@ -220,8 +220,8 @@
 </div>
 
 <form id="regForm">
-    <h1>tank geometry data</h1>
-    <!-- One "tab" for each step in the form: -->
+
+
     <div class="tab">
         <p><input placeholder="InsideDiameterDiCorroded..." name="InsideDiameterDiCorroded"></p>
         <p><input placeholder="tankHeight..." name="tankHeight"></p>
@@ -236,32 +236,32 @@
         <p><input placeholder="specificMinimumYieldStress..." name="specificMinimumYieldStress" readonly
                   id="specificMinimumYieldStress"></p>
         <p><input placeholder="modulusOfElasticity" readonly name="modulusOfElasticity" id="modulusOfElasticity"></p>
-        <p><input placeholder="densityOfMaterial" readonly name="densityOfMaterial" id="densityOfMaterial"></p>
+        <p><input placeholder="densityOfMaterial" readonly name="densityOfMaterial" id="pplate"></p>
         <p><input placeholder="corrosionAllowance" name="corrosionAllowance"></p>
         <p><input placeholder="minSpecificGravityOfProduct..." name="minSpecificGravityOfProduct"></p>
         <p><input placeholder="maxSpecificGravityOfProduct..." name="maxSpecificGravityOfProduct"></p>
         <p><input placeholder="roofLiveLoad..." name="roofLiveLoad"></p>
     </div>
     <div class="tab">GEOMETRY DATA:
-        <p><input placeholder="OuterRimHeight..." name="outerRimHeight"></p>
-        <p><input placeholder="innerRimHeight..." name="innerRimHeight"></p>
-        <p><input placeholder="pontoonWidth..." name="pontoonWidth"></p>
+        <p><input placeholder="OuterRimHeight..." name="outerRimHeight" id="hor"></p>
+        <p><input placeholder="innerRimHeight..." name="innerRimHeight" id="hir"></p>
+        <p><input placeholder="pontoonWidth..." name="pontoonWidth" id="w"></p>
         <p><input placeholder="rimGap..." name="rimGap"></p>
-        <p><input placeholder="outerRimExtendAbovePontoon" name="outerRimExtendAbovePontoon"></p>
-        <p><input placeholder="noOfPontoons" name="noOfPontoons"></p>
-        <p><input placeholder="outerRimDiameter" name="outerRimDiameter"></p>
-        <p><input placeholder="innerRimDiameter..." name="innerRimDiameter"></p>
-        <p><input placeholder="Bulkhead Outer heigh..." name="Boh"></p>
-        <p><input placeholder="Bulkhead Inner heigh..." name="Bih"></p>
-        <p><input placeholder="Bulkhead Width..." name="wb"></p>
+        <p><input placeholder="outerRimExtendAbovePontoon" id="hext" name="outerRimExtendAbovePontoon"></p>
+        <p><input placeholder="noOfPontoons" name="noOfPontoons" id="n"></p>
+        <p><input placeholder="outerRimDiameter" name="outerRimDiameter" id="oor"></p>
+        <p><input placeholder="innerRimDiameter..." name="innerRimDiameter" id="oir"></p>
+        <p><input placeholder="Bulkhead Outer heigh..." name="Boh" id="boh"></p>
+        <p><input placeholder="Bulkhead Inner heigh..." name="Bih" id="bih"></p>
+        <p><input placeholder="Bulkhead Width..." name="wb" id="wb"></p>
     </div>
     <div class="tab">MEMBER SIZE & PROPERTIES:
-        <p><input placeholder="tor..." name="tor"></p>
-        <p><input placeholder="tir..." name="tir"></p>
-        <p><input placeholder="ttp..." name="ttp"></p>
-        <p><input placeholder="tbp..." name="tbp"></p>
-        <p><input placeholder="tb" name="tb"></p>
-        <p><input placeholder="td" name="td"></p>
+        <p><input placeholder="tor..." name="tor" id="tor" onchange="outerRim()"></p>
+        <p><input placeholder="tir..." name="tir" id="tir" onchange="innerRim()"></p>
+        <p><input placeholder="ttp..." id="ttp" name="ttp" onchange="topPontoon()"></p>
+        <p><input placeholder="tbp..." name="tbp" id="tbp" onchange="bottomPontoon()"></p>
+        <p><input placeholder="tb" name="tb" id="tb" onchange="bulkheads()"></p>
+        <p><input placeholder="td" name="td" id="td" onchange="deckPlate()"></p>
         <p><input placeholder="circumferentialTrussPlates" name="circumferentialTrussPlates"></p>
         <div class="row clearfix">
             <div class="col_half">
@@ -271,11 +271,11 @@
             </div>
             <div class="col_half">
                 <div class="input_field"><span><i aria-hidden="true"></i></span>
-                    <input placeholder="Nos.of" name="rafterNos"/>
+                    <input placeholder="Nos.of" id="rafterNos" name="rafterNos"/>
                 </div>
                 <div class="col_half">
                     <div class="input_field"><span><i aria-hidden="true"></i></span>
-                        <input placeholder="At unit weight of" name="rafterWeight"/>
+                        <input id="rafterWeight" placeholder="At unit weight of" name="rafterWeight"/>
                     </div>
                 </div>
             </div>
@@ -286,11 +286,11 @@
             </div>
             <div class="col_half">
                 <div class="input_field"><span><i aria-hidden="true"></i></span>
-                    <input placeholder="postsNos" name="postsNos"/>
+                    <input placeholder="postsNos" id="postNos" name="postsNos"/>
                 </div>
                 <div class="col_half">
                     <div class="input_field"><span><i aria-hidden="true"></i></span>
-                        <input placeholder="At unit weight of" name="postsWeight"/>
+                        <input placeholder="At unit weight of" id="postWeight" name="postsWeight"/>
                     </div>
                 </div>
             </div>
@@ -300,60 +300,136 @@
     </div>
     <div class="tab">ROOF SUPPORT LEG:
         <h1>PONTOON LEG</h1>
-        <p><input placeholder="Np..." name="Np"></p>
-        <p><input placeholder="Pls..." name="Pls"></p>
-        <p><input placeholder="PlsSch..." name="PlsSch"></p>
-        <p><input placeholder="PlsWeight..." name="PlsWeight"></p>
-        <p><input placeholder="Plh'" name="Plh'"></p>
-        <p><input placeholder="PlhSch" name="PlhSch"></p>
-        <p><input placeholder="PlhWeight..." name="PlhWeight"></p>
-        <p><input placeholder="Pll'" name="Pll'"></p>
-        <p><input placeholder="Plhl" name="Plhl"></p>
+        <p><input placeholder="Np..." name="Np" id="np"></p>
+        <p><input placeholder="Pls..." name="Pls" id="pls"></p>
+        <p><input placeholder="PlsSch..." name="PlsSch" id="plssch"></p>
+        <p><input placeholder="PlsWeight..." name="PlsWeight" id="plsw"></p>
+        <p><input placeholder="Plh" name="Plh" id="plh"></p>
+        <p><input placeholder="PlhSch" name="PlhSch" id="plhsch"></p>
+        <p><input placeholder="PlhWeight..." name="PlhWeight" id="plhweight"></p>
+        <p><input placeholder="Pll" name="Pll" onchange="pontoonLegs()" id="pll"></p>
+        <p><input placeholder="Plhl" name="Plhl" id="plhl"></p>
 
 
     </div>
     <div class="tab">ROOF SUPPORT LEG:
         <h1>Deck LEG</h1>
-        <p><input placeholder="Nd..." name="Nd"></p>
-        <p><input placeholder="Dls..." name="Dls"></p>
-        <p><input placeholder="Dlh..." name="Dlh"></p>
+        <p><input placeholder="Nd..." name="Nd" id="nd"></p>
+        <p><input placeholder="Dls..." name="Dls" id="dls"></p>
+        <p><input placeholder="Dlh..." name="Dlh" id="dlh"></p>
         <p><input placeholder="DlsSch..." name="DlsSch"></p>
-        <p><input placeholder="DlhSch'" name="DlhSch"></p>
+        <p><input placeholder="DlhSch" name="DlhSch"></p>
         <p><input placeholder="DlsWeight" name="DlsWeight"></p>
         <p><input placeholder="DlhWeight..." name="DlhWeight"></p>
-        <p><input placeholder="Dll'" name="Dll'"></p>
-        <p><input placeholder="Dlhl" name="Dlhl"></p>
+        <p><input placeholder="Dll" id="dll" name="Dll"></p>
+        <p><input placeholder="Dlhl" id="dlhl" name="Dlhl"></p>
 
 
     </div>
     <div class="tab">ROOF SUPPORT LEG:
         <h1>Weight Calculation</h1>
-        <p><input placeholder="tpw..." name="tpw"></p>
-        <p><input placeholder="bpw..." name="bpw"></p>
-        <p><input placeholder="irw..." name="irw"></p>
-        <p><input placeholder="orw..." name="orw"></p>
-        <p><input placeholder="bw'" name="bw"></p>
-        <p><input placeholder="dpw" name="dpw"></p>
-        <p><input placeholder="plw..." name="plw"></p>
-        <p><input placeholder="plhw'" name="plhw'"></p>
-        <p><input placeholder="dlw" name="dlw"></p>
-        <p><input placeholder="dlhw..." name="dlhw"></p>
-        <p><input placeholder="paw'" name="paw'"></p>
+        <p><input placeholder="Top Pontoon w..." name="tpw" id="tpw"></p>
+        <p><input placeholder="Bottom pontoon w..." id="bpw" name="bpw"></p>
+        <p><input placeholder="Inner rim w..." id="irw" name="irw"></p>
+        <p><input placeholder="Outer rim w..." id="orw" name="orw"></p>
+        <p><input placeholder="bulheads w" name="bw" id="bw"></p>
+        <p><input placeholder="deck Plate w" name="dpw" id="dpw"></p>
+        <p><input placeholder="pontoon legs w..." id="plw" name="plw"></p>
+        <p><input placeholder="pontoon legs housing w" id="plhw" name="plhw'"></p>
+        <p><input placeholder="deck legs w" id="dlw" name="dlw"></p>
+        <p><input placeholder="deck legs housing w..." id="dlhw" name="dlhw"></p>
+        <p><input placeholder="paw" name="paw" id="paw"></p>
         <p><input placeholder="daw" name="daw"></p>
-        <p><input placeholder="rw'" name="rw'"></p>
-        <p><input placeholder="pw" name="pw"></p>
+        <p><input placeholder="rafters w" id="rw" name="rw'"></p>
+        <p><input placeholder="posts w" id="pw" name="pw"></p>
 
 
     </div>
     <div class="tab">ROOF SUPPORT LEG:
         <h1>Weight Calculation</h1>
-        <p><input placeholder="wp..." name="wp"></p>
-        <p><input placeholder="wd..." name="wd"></p>
-        <p><input placeholder="wr..." name="wr"></p>
-
+        <p><input placeholder="pontoon components..." id="wp" name="wp"></p>
+        <p><input placeholder="deck components..." id="wd" name="wd"></p>
+        <p><input placeholder="tatal weight of floating roof..." id="wr" name="wr"></p>
 
 
     </div>
+    <div class="tab">ROOF SUPPORT LEG:
+        <h1>PONTOON VOLUME</h1>
+        <p><input placeholder="h1..." id="h1" onchange="volume1()" name="h1"></p>
+        <p><input placeholder="h2..." id="h2" onchange="volume2()" name="h2"></p>
+        <p><input placeholder="h3..." id="h3" onchange="volume3()" name="h3"></p>
+        <p><input placeholder="v1..." id="v1" name="v1"></p>
+        <p><input placeholder="v2" id="v2" name="v2"></p>
+        <p><input placeholder="v3" id="v3" name="v3"></p>
+        <p><input placeholder="tp..." id="tp" name="tp"></p>
+        <p><input placeholder="vol" id="vol" name="vol"></p>
+
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>Operation floatation level – Deck</h1>
+        <p><input placeholder="tde" id="tde" name="tde"></p>
+        <p><input placeholder="dd" id="dd" name="dd"></p>
+        <h1>Operation floatation level – Pontoon</h1>
+        <p><input placeholder="pdv" id="pdv" name="pdv"></p>
+        <p><input placeholder="dp" id="dp" name="dp"></p>
+        <p><input placeholder="dlh" id="diffh" name="dlh2"></p>
+
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>Operation floatation level – Deck</h1>
+        <p><input placeholder="Volume Displaced by the Backslope..." id="v12" name="v12 "></p>
+        <p><input placeholder="va..." id="va" name="va"></p>
+        <p><input placeholder="vr..." id="vr" name="vr"></p>
+        <p><input placeholder="d(deck)..." id="hdeck" name="d12"></p>
+
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>FLOATATION LEVEL FOR ROOF - PONTOON & DECK FOR 10" (254MM) OF ACCUMULATED RAIN WATER</h1>
+        <p><input placeholder="hrain..." id="hrain" name="hrain"></p>
+        <p><input placeholder="Adeck..." id="adeck" name="adeck"></p>
+        <p><input placeholder="vrain..." id="vrain" name="vrain"></p>
+        <p><input placeholder="vdisplacement..." id="vdisplacement" name="vdisplacement"></p>
+        <p><input placeholder="h(rain)" id="hrain2" name="hrain2"></p>
+
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 1  NO RAIN WATER</h1>
+        <p><input placeholder="t..." id="t" name="t"></p>
+        <p><input placeholder="alpha..." id="alpha"  name="alpha"></p>
+        <p><input placeholder="q1..." id="q1" name="q1"></p>
+        <p><input placeholder="poisson's ratio..." id="pr" name="pr"></p>
+        <p><input placeholder="Modulus of Elasticity"  id="e" name="e"></p>
+        <p><input placeholder="k1" id="k1" name="k1"></p>
+        <p><input placeholder="k2..." id="k2" name="k2"></p>
+        <p><input placeholder="k31" id="k31" name="k31"></p>
+        <p><input placeholder="k41" id="k41" name="k41"></p>
+        <p><input placeholder="k32..." id="k32" name="k32"></p>
+        <p><input placeholder="k42" id="k42" name="k42"></p>
+
+    </div>
+
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>PONTOON PROPERTIES</h1>
+        <p><input placeholder="Nominal diameter of Inner Rim..." id="pdir" name="pdir"></p>
+        <p><input placeholder="pontoon inside width..." id="piw" name="piw"></p>
+        <p><input placeholder="Inner Rim Thickness" id="ptir" name="ptir"></p>
+        <p><input placeholder="Outer Rim Thickness..." id="ptor" name="ptor"></p>
+        <p><input placeholder="Top Pontoon Thk" id="pttp" name="pttp"></p>
+        <p><input placeholder="Btm Pontoon Thk" id="ptbp" name="ptbp"></p>
+        <p><input placeholder="Top Pontoon slope angle..." id="tpsa" name="tpsa"></p>
+        <p><input placeholder="Backslope angle" id="ba" name="ba"></p>
+        <p><input placeholder="Top pontoon length" id="tpl" name="tpl"></p>
+        <p><input placeholder="Btm pontoon length..." id="bpl" name="bpl"></p>
+        <p><input placeholder="Outer rim height" id="horwep" name="horwep"></p>
+        <p><input placeholder="Inner rim height..." id="phir" name="phir"></p>
+
+    </div>
+
+
     <div style="overflow:auto;">
         <div style="float:right;">
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -370,6 +446,9 @@
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+
     </div>
 </form>
 
@@ -381,13 +460,156 @@
         if (x == "A283M Gr C") {
             document.getElementById("specificMinimumYieldStress").value = 205;
             document.getElementById("modulusOfElasticity").value = 209000;
-            document.getElementById("densityOfMaterial").value = 7850;
+            document.getElementById("pplate").value = 7850;
         }
         if (x == "A285M Gr C") {
             document.getElementById("specificMinimumYieldStress").value = 205;
             document.getElementById("modulusOfElasticity").value = 190000;
-            document.getElementById("densityOfMaterial").value = 7800;
+            document.getElementById("pplate").value = 7800;
         }
+    }
+
+    function topPontoon() {
+        var oor = document.getElementById("oor").value;
+        var oir = document.getElementById("oir").value;
+        var pplate = document.getElementById("pplate").value;
+        var ttp = document.getElementById("ttp").value;
+        document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp);
+    }
+
+    function bottomPontoon() {
+        var oor = document.getElementById("oor").value;
+        var oir = document.getElementById("oir").value;
+        var pplate = document.getElementById("pplate").value;
+        var tbp = document.getElementById("tbp").value;
+        document.getElementById("bpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * tbp);
+    }
+
+    function outerRim() {
+        var oor = document.getElementById("oor").value;
+        var tor = document.getElementById("tor").value;
+        var pplate = document.getElementById("pplate").value;
+        var hor = document.getElementById("hor").value;
+        document.getElementById("orw").value = ((3.14159 / 4) * ((oor * pplate * hor * tor)));
+    }
+
+    function innerRim() {
+        var hir = document.getElementById("hir").value;
+        var oir = document.getElementById("oir").value;
+        var pplate = document.getElementById("pplate").value;
+        var tir = document.getElementById("tir").value;
+        document.getElementById("irw").value = (3.14159 * oir * pplate * tir * hir);
+    }
+
+
+    function bulkheads() {
+        var boh = document.getElementById("boh").value;
+        var bih = document.getElementById("bih").value;
+        var pplate = document.getElementById("pplate").value;
+        var wb = document.getElementById("wb").value;
+        var tb = document.getElementById("tb").value;
+        var n = document.getElementById("n").value;
+        document.getElementById("bw").value = (1 / 2) * (boh + bih) * tb * wb * n * pplate;
+    }
+
+    function deckPlate() {
+        var oir = document.getElementById("oir").value;
+        var td = document.getElementById("td").value;
+        var pplate = document.getElementById("pplate").value;
+        document.getElementById("bw").value = (3.14159 / 4) * (oir * oir) * td * pplate;
+    }
+
+    function pontoonLegs() {
+        var np = document.getElementById("np").value;
+        var pls = document.getElementById("pls").value;
+        var pll = document.getElementById("pll").value;
+        document.getElementById("plw").value = (np * pls * pll) / 1000;
+
+    }
+
+    function pontoonLegsHousing() {
+        var np = document.getElementById("np").value;
+        var plh = document.getElementById("plh").value;
+        var plhl = document.getElementById("plhl").value;
+        document.getElementById("plhw").value = (np * plh * plhl) / 1000;
+
+    }
+
+    function deckLegs() {
+        var np = document.getElementById("nd").value;
+        var plh = document.getElementById("dls").value;
+        var plhl = document.getElementById("dll").value;
+        document.getElementById("dlw").value = (np * plh * plhl) / 1000;
+
+    }
+
+    function deckLegsHousing() {
+        var np = document.getElementById("nd").value;
+        var plh = document.getElementById("dlh").value;
+        var plhl = document.getElementById("dlhl").value;
+        document.getElementById("dlhw").value = (np * plh * plhl) / 1000;
+
+    }
+
+    function rafters() {
+        var w = document.getElementById("w").value;
+        var rafterNos = document.getElementById("rafterNos").value;
+        var rafterWeight = document.getElementById("rafterWeight").value;
+        document.getElementById("rw").value = rafterNos * w * rafterWeight;
+
+    }
+
+    function posts() {
+        var hor = document.getElementById("hor").value;
+        var hir = document.getElementById("hir").value;
+        var hext = document.getElementById("hext").value;
+        var postWeight = document.getElementById("postWeight").value;
+        var postNos = document.getElementById("postNos").value;
+
+        document.getElementById("rw").value = ((hir + hor - hext) / 1000) * postNos * postWeight;
+
+    }
+
+    function volume1() {
+        var h1 = document.getElementById("h1").value;
+        var oir = document.getElementById("oir").value;
+        var w = document.getElementById("w").value;
+        document.getElementById("v1").value = (0.5 * h1 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+
+    }
+
+    function volume2() {
+        var h2 = document.getElementById("h2").value;
+        var oir = document.getElementById("oir").value;
+        var oor = document.getElementById("oor").value;
+        document.getElementById("v2").value = (h2 * 1.6 * (((oir + oor) / 2) / 100));
+    }
+
+    function volume3() {
+        var h3 = document.getElementById("h3").value;
+        var oir = document.getElementById("oir").value;
+        var w = document.getElementById("w").value;
+        var v1 = document.getElementById("v1").value;
+        var v2 = document.getElementById("v2").value;
+        var v3 = (0.5 * h3 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+        document.getElementById("v3").value = v3;
+        document.getElementById("vol").value=v1+v2+v3;
+    }
+
+    function wPontoon() {
+        var tpw = document.getElementById("tpw").value;
+        var bpw = document.getElementById("bpw").value;
+        var irw = document.getElementById("irw").value;
+        var orw = document.getElementById("orw").value;
+        var bw = document.getElementById("bw").value;
+        var plw = document.getElementById("plw").value;
+        var plhw = document.getElementById("plhw").value;
+        var paw = document.getElementById("paw").value;
+        var rw = document.getElementById("rw").value;
+        var pw = document.getElementById("pw").value;
+        document.getElementById("wp").value = tpw + bpw + irw + orw + bw + plw + plhw + paw + rw + pw;
+
+
     }
 
     function showTab(n) {
