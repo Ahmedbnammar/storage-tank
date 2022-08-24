@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 
 <style>
@@ -10,12 +9,9 @@
         box-sizing: border-box;
     }
 
-    body {
-        background-color: #f1f1f1;
-    }
 
     #regForm {
-        background-color: #ffffff;
+
         margin: 100px auto;
         font-family: Raleway;
         padding: 40px;
@@ -31,7 +27,7 @@
         padding: 10px;
         width: 100%;
         font-size: 17px;
-        font-family: Raleway;
+        font-family: "Times New Roman";
         border: 1px solid #aaaaaa;
     }
 
@@ -195,7 +191,21 @@
 
     .page-title {
         opacity: .75 !important;
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
     }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
 
 
 </style>
@@ -223,8 +233,11 @@
 
 
     <div class="tab">
-        <p><input placeholder="InsideDiameterDiCorroded..." name="InsideDiameterDiCorroded"></p>
-        <p><input placeholder="tankHeight..." name="tankHeight"></p>
+        <label for="test">HTML</label><br>
+        <p><input placeholder="InsideDiameterDiCorroded..." onchange="tests()" id="test"
+                  name="InsideDiameterDiCorroded"></p>
+
+        <p><input placeholder="tankHeight..." id="testing" onfocus="testss()" name="tankHeight"></p>
         <select class="active" name="materialOfConstruction" id="materialOfConstruction" style="--amber-200: black"
                 onchange="materialValues()">
 
@@ -238,9 +251,9 @@
         <p><input placeholder="modulusOfElasticity" readonly name="modulusOfElasticity" id="modulusOfElasticity"></p>
         <p><input placeholder="densityOfMaterial" readonly name="densityOfMaterial" id="pplate"></p>
         <p><input placeholder="corrosionAllowance" name="corrosionAllowance"></p>
-        <p><input placeholder="minSpecificGravityOfProduct..." name="minSpecificGravityOfProduct"></p>
+        <p><input placeholder="minSpecificGravityOfProduct..." id="pproduct" name="minSpecificGravityOfProduct"></p>
         <p><input placeholder="maxSpecificGravityOfProduct..." name="maxSpecificGravityOfProduct"></p>
-        <p><input placeholder="roofLiveLoad..." name="roofLiveLoad"></p>
+        <p><input placeholder="roofLiveLoad..." id="rll" name="roofLiveLoad"></p>
     </div>
     <div class="tab">GEOMETRY DATA:
         <p><input placeholder="OuterRimHeight..." name="outerRimHeight" id="hor"></p>
@@ -347,8 +360,8 @@
     </div>
     <div class="tab">ROOF SUPPORT LEG:
         <h1>Weight Calculation</h1>
-        <p><input placeholder="pontoon components..." id="wp" name="wp"></p>
-        <p><input placeholder="deck components..." id="wd" name="wd"></p>
+        <p><input placeholder="pontoon components..." onchange="" id="wp" name="wp"></p>
+        <p><input placeholder="deck components..." id="wd" onchange="tdE()" name="wd"></p>
         <p><input placeholder="tatal weight of floating roof..." id="wr" name="wr"></p>
 
 
@@ -369,7 +382,7 @@
     <div class="tab">SETTING DECK LEVEL:
         <h1>Operation floatation level – Deck</h1>
         <p><input placeholder="tde" id="tde" name="tde"></p>
-        <p><input placeholder="dd" id="dd" name="dd"></p>
+        <p><input placeholder="dd" id="dd" onclick="hdeck()" name="dd"></p>
         <h1>Operation floatation level – Pontoon</h1>
         <p><input placeholder="pdv" id="pdv" name="pdv"></p>
         <p><input placeholder="dp" id="dp" name="dp"></p>
@@ -397,12 +410,11 @@
 
     </div>
     <div class="tab">SETTING DECK LEVEL:
-        <h1>CENTRE DECK STRESS DESIGN CASE 1  NO RAIN WATER</h1>
+        <h1>CENTRE DECK STRESS DESIGN DATA</h1>
         <p><input placeholder="t..." id="t" name="t"></p>
-        <p><input placeholder="alpha..." id="alpha"  name="alpha"></p>
-        <p><input placeholder="q1..." id="q1" name="q1"></p>
+        <p><input placeholder="alpha..." id="alpha" name="alpha"></p>
         <p><input placeholder="poisson's ratio..." id="pr" name="pr"></p>
-        <p><input placeholder="Modulus of Elasticity"  id="e" name="e"></p>
+        <p><input placeholder="Modulus of Elasticity" id="e" name="e"></p>
         <p><input placeholder="k1" id="k1" name="k1"></p>
         <p><input placeholder="k2..." id="k2" name="k2"></p>
         <p><input placeholder="k31" id="k31" name="k31"></p>
@@ -413,18 +425,99 @@
     </div>
 
     <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 1 NO RAIN WATER</h1>
+        <label for="q1">Unit lateral pressure (equiv. weight of deck + live load that float on product)</label><br>
+        <p><input id="q1" name="q1"></p>
+        <label for="y1">maximum deflection,y1</label><br>
+        <p><input id="y1" name="y1"></p>
+        <label for="otc1">σtotal center 1</label><br>
+        <p><input id="otc1" name="otc1"></p>
+        <label for="obc1">σbending center 1</label><br>
+        <p><input id="obc1" name="obc1"></p>
+        <label for="odc1">σdiaphgram center 1 </label><br>
+        <p><input id="odc1" name="odc1"></p>
+        <label for="ote1">σtotal edge1</label><br>
+        <p><input id="ote1" name="ote1"></p>
+        <label for="obe1">σbending edge 1</label><br>
+        <p><input id="obe1" name="obe1"></p>
+        <label for="ode1">σdiaphgram edge 1</label><br>
+        <p><input id="ode1" name="ode1"></p>
+        <label for="rh1">Radial on rim,Rh1</label><br>
+        <p><input id="rh1" name="rh1"></p>
+
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 2  10" RAIN WATER</h1>
+        <label for="hrain1">Rain accumulation of 10” (254 mm)</label><br>
+        <p><input id="hrain1" name="hrain1"></p>
+        <label for="adeck1">deck area</label><br>
+        <p><input id="adeck1" name="adeck1"></p>
+        <label for="vrain1">Volume of rain water</label><br>
+        <p><input id="vrain1" name="vrain1"></p>
+        <label for="wrain">Weight of 10" accumulated rain water </label><br>
+        <p><input id="wrain" name="wrain"></p>
+        <label for="ubl">Upward buoyant load </label><br>
+        <p><input id="ubl" name="ubl"></p>
+        <label for="dl">Downward load1</label><br>
+        <p><input id="dl" name="dl"></p>
+        <label for="ndfad">Nett downward force acting on deck </label><br>
+        <p><input id="ndfad" name="ndfad"></p>
+        <label for="q2">Unit lateral pressure</label><br>
+        <p><input id="q2" name="q2"></p>
+
+
+
+    </div>
+
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 1 NO RAIN WATER</h1>
+
+        <label for="y2">maximum deflection</label><br>
+        <p><input id="y2" name="y2"></p>
+        <label for="otc2">σtotal center 2</label><br>
+        <p><input id="otc2" name="otc2"></p>
+        <label for="obc2">σbending center 2</label><br>
+        <p><input id="obc2" name="obc2"></p>
+        <label for="odc2">σdiaphgram center 2 </label><br>
+        <p><input id="odc2" name="odc2"></p>
+        <label for="ote2">σtotal edge2</label><br>
+        <p><input id="ote2" name="ote2"></p>
+        <label for="obe2">σbending edge 2</label><br>
+        <p><input id="obe2" name="obe2"></p>
+        <label for="ode2">σdiaphgram edge 2</label><br>
+        <p><input id="ode2" name="ode2"></p>
+        <label for="rh2">Radial on rim,Rh2</label><br>
+        <p><input id="rh2" name="rh2"></p>
+
+
+    </div>
+
+    <div class="tab">PONTOON STRESS DESIGN:
         <h1>PONTOON PROPERTIES</h1>
+        <label for="pdir">Nominal diameter of Inner Rim</label><br>
         <p><input placeholder="Nominal diameter of Inner Rim..." id="pdir" name="pdir"></p>
+        <label for="piw">pontoon inside width</label><br>
         <p><input placeholder="pontoon inside width..." id="piw" name="piw"></p>
+        <label for="ptir">Inner Rim Thickness</label><br>
         <p><input placeholder="Inner Rim Thickness" id="ptir" name="ptir"></p>
+        <label for="ptor">Outer Rim Thickness</label><br>
         <p><input placeholder="Outer Rim Thickness..." id="ptor" name="ptor"></p>
+        <label for="pttp">Top Pontoon Thk</label><br>
         <p><input placeholder="Top Pontoon Thk" id="pttp" name="pttp"></p>
+        <label for="ptbp">Btm Pontoon Thk</label><br>
         <p><input placeholder="Btm Pontoon Thk" id="ptbp" name="ptbp"></p>
+        <label for="tpsa">Top Pontoon slope angle</label><br>
         <p><input placeholder="Top Pontoon slope angle..." id="tpsa" name="tpsa"></p>
+        <label for="ba">Backslope angle</label><br>
         <p><input placeholder="Backslope angle" id="ba" name="ba"></p>
+        <label for="tpl">Top pontoon length</label><br>
         <p><input placeholder="Top pontoon length" id="tpl" name="tpl"></p>
+        <label for="bpl">Btm pontoon length</label><br>
         <p><input placeholder="Btm pontoon length..." id="bpl" name="bpl"></p>
+        <label for="horwep">Outer rim height</label><br>
         <p><input placeholder="Outer rim height" id="horwep" name="horwep"></p>
+        <label for="phir">Inner rim height</label><br>
         <p><input placeholder="Inner rim height..." id="phir" name="phir"></p>
 
     </div>
@@ -438,6 +531,10 @@
     </div>
     <!-- Circles which indicates the steps of the form: -->
     <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
@@ -527,6 +624,17 @@
 
     }
 
+
+    function tests() {
+        document.getElementById("testing").value = parseFloat(document.getElementById("test").value);
+
+    }
+
+    function testss() {
+        document.getElementById("pproduct").value = document.getElementById("testing").value;
+
+    }
+
     function pontoonLegsHousing() {
         var np = document.getElementById("np").value;
         var plh = document.getElementById("plh").value;
@@ -565,8 +673,31 @@
         var hext = document.getElementById("hext").value;
         var postWeight = document.getElementById("postWeight").value;
         var postNos = document.getElementById("postNos").value;
+        var tpw = document.getElementById("tpw").value;
+        var bpw = document.getElementById("bpw").value;
+        var irw = document.getElementById("irw").value;
+        var orw = document.getElementById("orw").value;
+        var bw = document.getElementById("bw").value;
+        var plw = document.getElementById("plw").value;
+        var plhw = document.getElementById("plhw").value;
+        var paw = document.getElementById("paw").value;
+        var rw = document.getElementById("rw").value;
+        var pw = ((hir + hor - hext) / 1000) * postNos * postWeight;
+        var wp = tpw + bpw + irw + orw + bw + plw + plhw + paw + rw + pw;
+        var v1 = document.getElementById("v1").value;
+        var oir = document.getElementById("oir").value;
+        var oor = document.getElementById("oor").value;
+        var pproduct = document.getElementById("pproduct").value;
+        var pdv = (wp / pproduct) * 1000;
+        var dp = ((pdv - v1) * Math.pow(1000, 3)) / ((3.14 / 4) * (Math.pow(oor, 2) - Math.pow(oir, 2)));
 
-        document.getElementById("rw").value = ((hir + hor - hext) / 1000) * postNos * postWeight;
+        document.getElementById("wp").value = wp;
+        document.getElementById("pdv").value = pdv;
+        document.getElementById("dp").value = dp;
+
+
+        document.getElementById("rw").value = pw;
+
 
     }
 
@@ -593,24 +724,37 @@
         var v2 = document.getElementById("v2").value;
         var v3 = (0.5 * h3 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
         document.getElementById("v3").value = v3;
-        document.getElementById("vol").value=v1+v2+v3;
+        document.getElementById("vol").value = v1 + v2 + v3;
     }
 
     function wPontoon() {
-        var tpw = document.getElementById("tpw").value;
-        var bpw = document.getElementById("bpw").value;
-        var irw = document.getElementById("irw").value;
-        var orw = document.getElementById("orw").value;
-        var bw = document.getElementById("bw").value;
-        var plw = document.getElementById("plw").value;
-        var plhw = document.getElementById("plhw").value;
-        var paw = document.getElementById("paw").value;
-        var rw = document.getElementById("rw").value;
-        var pw = document.getElementById("pw").value;
-        document.getElementById("wp").value = tpw + bpw + irw + orw + bw + plw + plhw + paw + rw + pw;
 
 
     }
+
+    function tdE() {
+        var wd = document.getElementById("wd").value;
+        var dpw = document.getElementById("dpw").value;
+        var td = document.getElementById("td").value;
+        var pplate = document.getElementById("pplate").value;
+        var pproduct = document.getElementById("pproduct").value;
+        document.getElementById("tde").value = (wd / dpw) * td;
+        document.getElementById("dd").value = ((pplate / (pproduct * 1000))) * (wd / dpw) * td;
+    }
+    function noRainWater(){
+        var dd = parseFloat(document.getElementById("dd").value);
+        var wd = parseFloat(document.getElementById("wd").value);
+        var oir =parseFloat(document.getElementById("oir").value);
+        var rll = parseFloat(document.getElementById("rll").value);
+        var pproduct = parseFloat(document.getElementById("pproduct").value);
+        if (Math.abs(9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2))>Math.abs(9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2)+rll/1000)){
+            document.getElementById("q1").value=9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2);
+        }
+        else {
+            document.getElementById("q1").value=9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2)+rll/1000;
+        }
+    }
+
 
     function showTab(n) {
         // This function will display the specified tab of the form...
