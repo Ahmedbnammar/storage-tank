@@ -234,7 +234,59 @@
 
     <div class="tab">
         <label for="test">HTML</label><br>
-        <p><input placeholder="InsideDiameterDiCorroded..." onchange="tests()" id="test"
+        <table>
+            <tr>
+                <th></th>
+                <th>A(mm²)</th>
+                <th>Y(mm)</th>
+                <th>AY(mm3)</th>
+                <th>H(mm)</th>
+                <th>A(h^2)(mm4)</th>
+                <th>I=(bd^3)/12(mm4)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input id="ta1"></td>
+                <td><input id="ty1"></td>
+                <td><input id="tay1"></td>
+                <td><input id="th1"></td>
+                <td><input id="tah1"></td>
+                <td><input id="ti1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input id="ta2"></td>
+                <td><input id="ty2"></td>
+                <td><input id="tay2"></td>
+                <td><input id="th2"></td>
+                <td><input id="tah2"></td>
+                <td><input id="ti2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input id="ta3"></td>
+                <td><input id="ty3"></td>
+                <td><input id="tay3"></td>
+                <td><input id="th3"></td>
+                <td><input id="tah3"></td>
+                <td><input id="ti3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input id="ta4"></td>
+                <td><input id="ty4"></td>
+                <td><input id="tay4"></td>
+                <td><input id="th4"></td>
+                <td><input id="tah4"></td>
+                <td><input id="ti4"></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="tab">
+        <label for="test">HTML</label><br>
+        <p><input placeholder="InsideDiameterDiCorroded..." onchange="noRainWater()" id="test"
                   name="InsideDiameterDiCorroded"></p>
 
         <p><input placeholder="tankHeight..." id="testing" onfocus="testss()" name="tankHeight"></p>
@@ -448,7 +500,7 @@
 
     </div>
     <div class="tab">SETTING DECK LEVEL:
-        <h1>CENTRE DECK STRESS DESIGN CASE 2  10" RAIN WATER</h1>
+        <h1>CENTRE DECK STRESS DESIGN CASE 2 10" RAIN WATER</h1>
         <label for="hrain1">Rain accumulation of 10” (254 mm)</label><br>
         <p><input id="hrain1" name="hrain1"></p>
         <label for="adeck1">deck area</label><br>
@@ -465,7 +517,6 @@
         <p><input id="ndfad" name="ndfad"></p>
         <label for="q2">Unit lateral pressure</label><br>
         <p><input id="q2" name="q2"></p>
-
 
 
     </div>
@@ -519,6 +570,18 @@
         <p><input placeholder="Outer rim height" id="horwep" name="horwep"></p>
         <label for="phir">Inner rim height</label><br>
         <p><input placeholder="Inner rim height..." id="phir" name="phir"></p>
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 1 NO RAIN WATER</h1>
+
+        <label for="c1">Neutral axis of combined section</label><br>
+        <p><input id="c1" name="c1"></p>
+        <label for="lx">Moment of inertia of section </label><br>
+        <p><input id="lx" name="lx"></p>
+        <label for="za">Section modulus available, Za</label><br>
+        <p><input id="za" name="za"></p>
+
 
     </div>
 
@@ -741,20 +804,96 @@
         document.getElementById("tde").value = (wd / dpw) * td;
         document.getElementById("dd").value = ((pplate / (pproduct * 1000))) * (wd / dpw) * td;
     }
-    function noRainWater(){
+
+    function noRainWater() {
         var dd = parseFloat(document.getElementById("dd").value);
         var wd = parseFloat(document.getElementById("wd").value);
-        var oir =parseFloat(document.getElementById("oir").value);
+        var oir = parseFloat(document.getElementById("oir").value);
         var rll = parseFloat(document.getElementById("rll").value);
+        var k2 = parseFloat(document.getElementById("k2").value);
+        var alpha = parseFloat(document.getElementById("alpha").value);
+        var e = parseFloat(document.getElementById("e").value);
+        var t = parseFloat(document.getElementById("t").value);
+        var k1 = parseFloat(document.getElementById("k1").value);
+        var k31 = parseFloat(document.getElementById("k31").value);
+        var k41 = parseFloat(document.getElementById("k41").value);
+        var k32 = parseFloat(document.getElementById("k32").value);
+        var k42 = parseFloat(document.getElementById("k42").value);
+
+        var q1;
         var pproduct = parseFloat(document.getElementById("pproduct").value);
-        if (Math.abs(9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2))>Math.abs(9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2)+rll/1000)){
-            document.getElementById("q1").value=9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2);
+        if (Math.abs(9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2)) > Math.abs(9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2) + rll / 1000)) {
+            q1 = 9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2);
+        } else {
+            q1 = 9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2) + rll / 1000;
         }
-        else {
-            document.getElementById("q1").value=9.8*(wd-(3.14/4)*Math.pow(oir,2)*dd*pproduct*1000/1000000000)/(3.14/4)*Math.pow(oir,2)+rll/1000;
-        }
+        document.getElementById("q1").value = q1;
+
+        var y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q1 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
+        document.getElementById("y1").value = y1;
+        document.getElementById("otc1").value = (k31 * y1 / t + k41 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
+        document.getElementById("obc1").value = k31 * y1 * e * t / Math.pow(alpha, 2);
+        document.getElementById("odc1").value = k41 * Math.pow(y, 2) * e / Math.pow(alpha, 2);
+        document.getElementById("ote1").value = (k32 * y1 / t + k42 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
+        document.getElementById("obe1").value = k32 * y1 * e * t / Math.pow(alpha, 2);
+        document.getElementById("ode1").value = k42 * Math.pow(y, 2) * e / Math.pow(alpha, 2);
+        document.getElementById("rh1").value = (k41 * Math.pow(y, 2) * e / Math.pow(alpha, 2)) * t;
+
     }
 
+    function table1() {
+        var tir = document.getElementById("tir").value;
+        var hir = document.getElementById("hir").value;
+        var tpl = document.getElementById("tpl").value;
+        var bpl = document.getElementById("bpl").value;
+        var ttp = document.getElementById("ttp").value;
+        var horwep = document.getElementById("horwep").value;
+        var tor = document.getElementById("tor").value;
+        var tbp = document.getElementById("tbp").value;
+        var piw = document.getElementById("piw").value;
+        var c1 = document.getElementById("c1").value;
+        a1 = tir * hir;
+        a2 = tpl * ttp;
+        a3 = bpl * tbp;
+        a4 = horwep * tor;
+        y1 = tir / 2;
+        y2 = 0.5 * piw + tir;
+        y3 = 0.5 * piw + tir;
+        y4 = 0.5 * tor + piw + tir;
+        h1 = Math.abs(y1 - c1);
+        h2 = Math.abs(y2 - c1);
+        h3 = Math.abs(y3 - c1);
+        h4 = Math.abs(y4 - c1);
+        document.getElementById("ta1").value = a1;
+        document.getElementById("ta2").value = a2;
+        document.getElementById("ta3").value = a3;
+        document.getElementById("ta4").value = a4;
+        document.getElementById("ty1").value = y1;
+        document.getElementById("ty2").value = y2;
+        document.getElementById("ty3").value = y3;
+        document.getElementById("ty4").value = y4;
+        document.getElementById("th1").value = h1;
+        document.getElementById("th2").value = h2;
+        document.getElementById("th3").value = h3;
+        document.getElementById("th4").value = h4;
+        document.getElementById("tay1").value = a1 * y1;
+        document.getElementById("tay2").value = a2 * y2;
+        document.getElementById("tay3").value = a3 * y3;
+        document.getElementById("tay4").value = a4 * y4;
+        document.getElementById("tah1").value = a1 * Math.pow(h1, 2);
+        document.getElementById("tah2").value = a2 * Math.pow(h2, 2);
+        document.getElementById("tah3").value = a3 * Math.pow(h3, 2);
+        document.getElementById("tah4").value = a4 * Math.pow(h4, 2);
+        document.getElementById("ti1").value = h1;
+        document.getElementById("ti2").value = h2;
+        document.getElementById("ti3").value = h3;
+        document.getElementById("ti4").value = h4;
+
+
+    }
+    function table2(){
+
+    }
 
     function showTab(n) {
         // This function will display the specified tab of the form...
@@ -814,6 +953,89 @@
             document.getElementsByClassName("step")[currentTab].className += " finish";
         }
         return valid; // return the valid status
+    }
+
+    function cubic(a, b, c, d) {
+        var pi, q, del;
+        pi = Math.PI;
+        e = Math.E;
+
+        var x = [];
+
+
+        for (k = 0; k <= 2; k++) {
+            x[k] = 0;
+        }
+
+        with (Math) {
+            a = eval(a);
+            b = eval(b);
+            c = eval(c);
+            d = eval(d);
+            vt = -b / 3 / a;
+            mvt = -vt;
+            p = c / a - b * b / 3 / a / a;
+            q = b * b * b / a / a / a / 13.5 + d / a - b * c / 3 / a / a;
+            if (abs(p) < 1e-14) {
+                p = 0
+            }
+            if (abs(q) < 1e-14) {
+                q = 0
+            }
+            del = q * q / 4 + p * p * p / 27;
+            if (abs(del) < 1e-14) {
+                del = 0
+            }
+
+
+            if (del <= 0) {
+                if (p !== 0) {
+                    kos = -q / 2 / sqrt(-p * p * p / 27);
+                    r = sqrt(-p / 3)
+                } else {
+                    kos = 0;
+                    r = 0
+                }  // vu que del<=0, si p=0, alors del=0
+                if (abs(kos === 1)) {
+                    alpha = -pi * (kos - 1) / 2
+                } else {
+                    alpha = acos(kos)
+                }
+                for (k = 0; k <= 2; k++) {
+                    xk = 2 * r * cos((alpha + 2 * k * pi) / 3) + vt;
+                    x[k] = arrondi(xk)
+                }
+                if (r === 0) {
+                    triple = "Solution triple :"
+                } else {
+                    triple = "Trois solutions :"
+                }
+                return Math.max(x[0], x[1], x[2]);
+            }
+// ----------- fin if
+            else {
+                xuni = arrondi(uv(1) + uv(-1) + vt);
+                return xuni;
+            } //---------------------------------- fin else if(del<=0)
+        } // fin with
+        // ----------------------------------fin procedure
+
+        function uv(sg) {
+            with (Math) {
+                r = sqrt(del);
+                z = -q / 2 + sg * r;
+                return sgn(z) * pow(abs(z), 1 / 3)
+            }
+        }
+
+        function sgn(x) {
+            s = (x > 0) - (x < 0);
+            return s
+        }
+
+        function arrondi(x) {
+            return sgn(x) * Math.floor(Math.abs(x) * 1e10 + .5) / 1e10
+        }
     }
 
     function fixStepIndicator(n) {
