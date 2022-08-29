@@ -263,12 +263,12 @@
         <p><input placeholder="pontoonWidth..." name="pontoonWidth" id="w"></p>
         <p><input placeholder="rimGap..." id="rg" name="rimGap"></p>
         <p><input placeholder="outerRimExtendAbovePontoon" id="hext" name="outerRimExtendAbovePontoon"></p>
-        <p><input placeholder="noOfPontoons" name="noOfPontoons"  id="n"></p>
-        <p><input placeholder="outerRimDiameter"  name="outerRimDiameter" id="oor"></p>
-        <p><input placeholder="innerRimDiameter..."  name="innerRimDiameter" id="oir"></p>
-        <p><input placeholder="Bulkhead Outer heigh..."  name="Boh" id="boh"></p>
-        <p><input placeholder="Bulkhead Inner heigh..."  name="Bih" id="bih"></p>
-        <p><input placeholder="Bulkhead Width..." name="wb"  id="wb"></p>
+        <p><input placeholder="noOfPontoons" name="noOfPontoons" onchange="oor()" id="n"></p>
+        <p><input placeholder="outerRimDiameter" readonly name="outerRimDiameter" id="oor"></p>
+        <p><input placeholder="innerRimDiameter..." readonly name="innerRimDiameter" id="oir"></p>
+        <p><input placeholder="Bulkhead Outer heigh..." readonly name="Boh" id="boh"></p>
+        <p><input placeholder="Bulkhead Inner heigh..." readonly name="Bih" id="bih"></p>
+        <p><input placeholder="Bulkhead Width..." name="wb" readonly id="wb"></p>
     </div>
     <div class="tab">MEMBER SIZE & PROPERTIES:
         <p><input placeholder="tor..." name="tor" id="tor" onchange="outerRim()"></p>
