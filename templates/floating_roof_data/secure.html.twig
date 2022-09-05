@@ -231,22 +231,18 @@
 
 <form id="regForm">
 
-{#
 
     <div class="tab">
         <h1>TANK GEOMETRY DATA</h1>
-
-
         <label for="di">Inside diameter,Di(corroded)</label><br>
         <p><input placeholder="InsideDiameterDiCorroded..." id="di"
                   name="InsideDiameterDiCorroded"></p>
         <label for="th">Tank height,H</label><br>
         <p><input placeholder="tankHeight..." id="th" name="tankHeight"></p>
         <label for="materialOfConstruction">Meterial of construction</label><br>
-        <select class="active" name="materialOfConstruction" id="materialOfConstruction"
-                style="--amber-200: black;width: 350px;"
+        <select class="active" name="materialOfConstruction" id="materialOfConstruction" style="--amber-200: black"
                 onchange="materialValues()">
-            <option style="align-self: center" value="A283M Gr C">Select a Material</option>
+
             <option value="A283M Gr C">A283M Gr C</option>
             <option value="A285M Gr C">A285M Gr C</option>
 
@@ -382,6 +378,7 @@
         <p><input placeholder="v1..." id="v1" name="v1"></p>
         <p><input placeholder="v2" id="v2" name="v2"></p>
         <p><input placeholder="v3" id="v3" name="v3"></p>
+        <p><input placeholder="tp..." id="tp" name="tp"></p>
         <p><input placeholder="vol" id="vol" name="vol"></p>
 
 
@@ -389,7 +386,7 @@
     <div class="tab">SETTING DECK LEVEL:
         <h1>Operation floatation level – Deck</h1>
         <p><input placeholder="tde" id="tde" name="tde"></p>
-        <p><input placeholder="dd" id="dd" name="dd"></p>
+        <p><input placeholder="dd" id="dd" onclick="hdeck()" name="dd"></p>
         <h1>Operation floatation level – Pontoon</h1>
         <p><input placeholder="pdv" id="pdv" name="pdv"></p>
         <p><input placeholder="dp" id="dp" name="dp"></p>
@@ -408,11 +405,11 @@
     </div>
     <div class="tab">SETTING DECK LEVEL:
         <h1>FLOATATION LEVEL FOR ROOF - PONTOON & DECK FOR 10" (254MM) OF ACCUMULATED RAIN WATER</h1>
-        <p><input placeholder="hrain..." id="hrain" onchange="accumulatedRainWater()" name="hrain"></p>
+        <p><input placeholder="hrain..." id="hrain" name="hrain"></p>
         <p><input placeholder="Adeck..." id="adeck" name="adeck"></p>
         <p><input placeholder="vrain..." id="vrain" name="vrain"></p>
         <p><input placeholder="vdisplacement..." id="vdisplacement" name="vdisplacement"></p>
-        <p><input placeholder="h(rain)" id="hdeckr" name="hrain2"></p>
+        <p><input placeholder="h(rain)" id="hrain2" name="hrain2"></p>
 
 
     </div>
@@ -420,8 +417,8 @@
         <h1>CENTRE DECK STRESS DESIGN DATA</h1>
         <p><input placeholder="t..." id="t" name="t"></p>
         <p><input placeholder="alpha..." id="alpha" name="alpha"></p>
-        <p><input placeholder="poisson's ratio..." onchange="centreDeckStress()" id="pr" name="pr"></p>
-        <p><input placeholder="Modulus of Elasticity" id="e" onchange="noRainWater()" name="e"></p>
+        <p><input placeholder="poisson's ratio..." id="pr" name="pr"></p>
+        <p><input placeholder="Modulus of Elasticity" id="e" name="e"></p>
         <p><input placeholder="k1" id="k1" name="k1"></p>
         <p><input placeholder="k2..." id="k2" name="k2"></p>
         <p><input placeholder="k31" id="k31" name="k31"></p>
@@ -449,7 +446,7 @@
         <p><input id="obe1" name="obe1"></p>
         <label for="ode1">σdiaphgram edge 1</label><br>
         <p><input id="ode1" name="ode1"></p>
-        <label for="rh1">Radial load on rim,Rh1</label><br>
+        <label for="rh1">Radial on rim,Rh1</label><br>
         <p><input id="rh1" name="rh1"></p>
 
 
@@ -457,7 +454,7 @@
     <div class="tab">SETTING DECK LEVEL:
         <h1>CENTRE DECK STRESS DESIGN CASE 2 10" RAIN WATER</h1>
         <label for="hrain1">Rain accumulation of 10” (254 mm)</label><br>
-        <p><input id="hrain1" onchange="rainWater()" name="hrain1"></p>
+        <p><input id="hrain1" name="hrain1"></p>
         <label for="adeck1">deck area</label><br>
         <p><input id="adeck1" name="adeck1"></p>
         <label for="vrain1">Volume of rain water</label><br>
@@ -493,7 +490,7 @@
         <p><input id="obe2" name="obe2"></p>
         <label for="ode2">σdiaphgram edge 2</label><br>
         <p><input id="ode2" name="ode2"></p>
-        <label for="rh2">Radial load on rim,Rh2</label><br>
+        <label for="rh2">Radial on rim,Rh2</label><br>
         <p><input id="rh2" name="rh2"></p>
 
 
@@ -524,10 +521,78 @@
         <label for="horwep">Outer rim height</label><br>
         <p><input placeholder="Outer rim height" id="horwep" name="horwep"></p>
         <label for="phir">Inner rim height</label><br>
-        <p><input onchange="myFunction()" placeholder="Inner rim height..." id="phir" name="phir"></p>
+        <p><input placeholder="Inner rim height..." id="phir" name="phir"></p>
+
+    </div>
+    <div class="tab">SETTING DECK LEVEL:
+        <h1>CENTRE DECK STRESS DESIGN CASE 1 NO RAIN WATER</h1>
+
+        <label for="c1">Neutral axis of combined section</label><br>
+        <p><input id="c1" name="c1"></p>
+        <label for="lx">Moment of inertia of section </label><br>
+        <p><input id="lx" name="lx"></p>
+        <label for="za">Section modulus available, Za</label><br>
+        <p><input id="za" name="za"></p>
+
 
     </div>
     <div class="tab">
+
+        <h2>HTML Table</h2>
+
+        <table>
+            <tr>
+                <th>Ring stability check</th>
+                <th>Mid-Point</th>
+                <th>Load-Point</th>
+            </tr>
+            <tr>
+                <td>Bending moment (N.mm)</td>
+                <td><input id="c11"></td>
+                <td><input id="c12"></td>
+
+            </tr>
+            <tr>
+                <td>Circumferential force (N)</td>
+                <td><input id="c21"></td>
+                <td><input id="c22"></td>
+            </tr>
+
+            <tr>
+                <td>Bending stress (N/mm^2)</td>
+                <td><input id="c31"></td>
+                <td><input id="c32"></td>
+            </tr>
+            <tr>
+                <td>Circumferential stress (N/mm^2)</td>
+                <td><input id="c41"></td>
+                <td><input id="c42"></td>
+            </tr>
+            <tr>
+                <td>Allow. Bending stress (N/mm^2)</td>
+                <td><input id="c51"></td>
+                <td><input id="c52"></td>
+            </tr>
+            <tr>
+                <td>Allow. Axial stress (N/mm^2)</td>
+                <td><input id="c61"></td>
+                <td><input id="c62"></td>
+            </tr>
+            <tr>
+                <td>Unity Check</td>
+                <td><input id="c71"></td>
+                <td><input id="c72"></td>
+            </tr>
+            <tr>
+                <td>Condition</td>
+                <td><input id="c81"></td>
+                <td><input id="c82"></td>
+            </tr>
+
+
+        </table>
+
+
         <table>
             <tr>
                 <th></th>
@@ -587,174 +652,6 @@
 
     </div>
 
-    <div class="tab">SETTING DECK LEVEL:
-        <h1>CENTRE DECK STRESS DESIGN CASE 1 NO RAIN WATER</h1>
-
-        <label for="c1">Neutral axis of combined section</label><br>
-        <p><input id="c1" name="c1"></p>
-        <label for="lx">Moment of inertia of section </label><br>
-        <p><input id="lx" name="lx"></p>
-        <label for="za">Section modulus available, Za</label><br>
-        <p><input id="za" name="za"></p>
-
-
-    </div>
-    <div class="tab">
-        <h1>PONTOON MATERIAL PROPERTIES</h1>
-
-
-        <label for="materialOfConstruction">Meterial of construction</label><br>
-        <select class="active" name="materialOfConstruction" id="materialOfConstruction2"
-                style="--amber-200: black;width: 350px;"
-                onchange="materialValues()">
-            <option style="align-self: center" value="A283M Gr C">Select a Material</option>
-            <option value="A283M Gr C">A283M Gr C</option>
-            <option value="A285M Gr C">A285M Gr C</option>
-
-
-        </select>
-        <label for="sy">Specified minimum yield stress, Sy</label><br>
-        <p><input id="sy" name="sy"></p>
-        <label for="k">Yield strength reduction factor, k </label><br>
-        <p><input placeholder="Yield strength reduction factor, k ..." name="k"
-                  id="k"></p>
-        <label for="ks">Allowable stress reduction factor, ks</label><br>
-        <p><input onchange="pontoonStressDesign()" name="ks" id="ks"></p>
-        <label for="fb">Allowable bending stress, Fb</label><br>
-        <p><input readonly id="fb"></p>
-        <label for="fc">Allowable compressive stress, Fc</label><br>
-        <p><input id="fc" readonly></p>
-        <label for="nlp">Number of load point at each mm,Nlp</label><br>
-        <p><input readonly id="nlp"></p>
-        <label for="a0">Angle α°</label><br>
-        <p><input id="a0" readonly></p>
-        <label for="rlr1">Radial load on rim, Rh1</label><br>
-        <p><input id="rlr1"></p>
-        <label for="rlr2">Radial load on rim, Rh2</label><br>
-        <p><input id="rlr2"></p>
-    </div>
-    <div class="tab">
-        <h2>HTML Table</h2>
-
-        <table>
-            <tr>
-                <th>Ring stability check</th>
-                <th>Mid-Point</th>
-                <th>Load-Point</th>
-            </tr>
-            <tr>
-                <td>Bending moment (N.mm)</td>
-                <td><input id="c11"></td>
-                <td><input id="c12"></td>
-
-            </tr>
-            <tr>
-                <td>Circumferential force (N)</td>
-                <td><input id="c21"></td>
-                <td><input id="c22"></td>
-            </tr>
-
-            <tr>
-                <td>Bending stress (N/mm^2)</td>
-                <td><input id="c31"></td>
-                <td><input id="c32"></td>
-            </tr>
-            <tr>
-                <td>Circumferential stress (N/mm^2)</td>
-                <td><input id="c41"></td>
-                <td><input id="c42"></td>
-            </tr>
-            <tr>
-                <td>Allow. Bending stress (N/mm^2)</td>
-                <td><input id="c51"></td>
-                <td><input id="c52"></td>
-            </tr>
-            <tr>
-                <td>Allow. Axial stress (N/mm^2)</td>
-                <td><input id="c61"></td>
-                <td><input id="c62"></td>
-            </tr>
-            <tr>
-                <td>Unity Check</td>
-                <td><input id="c71"></td>
-                <td><input id="c72"></td>
-            </tr>
-            <tr>
-                <td>Condition</td>
-                <td><input id="c81"></td>
-                <td><input id="c82"></td>
-            </tr>
-
-
-        </table>
-
-
-    </div>
-#}
-
-    <div class="tab">
-        <h1>testing number</h1>
-
-
-
-
-
-        <label for="noa">Number of areas</label><br>
-        <select class="active" name="noa" id="noa"
-                style="--amber-200: black;width: 350px;"
-                onchange="numberOfAreas()">
-            <option style="align-self: center" >Select the number of areas</option>
-            <option value="3">3</option>
-            <option value="4">4</option >
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">12</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-
-
-
-        </select>
-        <br>
-        <label id="01" for="1">Nos at R1</label><br>
-        <p><input  id="1"></p>
-        <label id="02" for="2">Nos at R2</label><br>
-        <p><input  id="2"></p>
-        <label id="03" for="3">Nos at R3</label><br>
-        <p><input  id="3"></p>
-        <label id="04" for="4">Nos at R4</label><br>
-        <p><input  id="4"></p>
-        <label id="05" for="5">Nos at R5</label><br>
-        <p><input   id="5"></p>
-        <label id="06" for="6">Nos at R6</label><br>
-        <p><input  id="6"></p>
-        <label id="07" for="7">Nos at R7</label><br>
-        <p><input  id="7"></p>
-        <label id="08" for="8">Nos at R8</label><br>
-        <p><input  id="8"></p>
-        <label id="09" for="9">Nos at R9</label><br>
-        <p><input  id="9"></p>
-        <label id="010" for="10">Nos at R10</label><br>
-        <p><input  id="10"></p>
-        <label id="011" for="11">Nos at R11</label><br>
-        <p><input  id="11"></p>
-        <label id="012" for="12">Nos at R12</label><br>
-        <p><input  id="12"></p>
-        <label id="013" for="13">Nos at R13</label><br>
-        <p><input  id="13"></p>
-        <label id="014" for="14">Nos at R14</label><br>
-        <p><input  id="14"></p>
-        <label id="015" for="15">Nos at R15</label><br>
-        <p><input  id="15"></p>
-
-    </div>
-
 
     <div style="overflow:auto;">
         <div style="float:right;">
@@ -778,29 +675,21 @@
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
 
     </div>
 </form>
 
 <script>
-    let currentTab = 0; // Current tab is set to be the first tab (0)
+    var currentTab = 0; // Current tab is set to be the first tab (0)
     showTab(currentTab); // Display the current tab
     function materialValues() {
-        let x = document.getElementById("materialOfConstruction").value;
-        if (x === "A283M Gr C") {
+        var x = document.getElementById("materialOfConstruction").value;
+        if (x == "A283M Gr C") {
             document.getElementById("specificMinimumYieldStress").value = 205;
             document.getElementById("modulusOfElasticity").value = 209000;
             document.getElementById("pplate").value = 7850;
         }
-        if (x === "A285M Gr C") {
+        if (x == "A285M Gr C") {
             document.getElementById("specificMinimumYieldStress").value = 205;
             document.getElementById("modulusOfElasticity").value = 190000;
             document.getElementById("pplate").value = 7800;
@@ -819,24 +708,38 @@
         document.getElementById("bih").style.display = "none";
         document.getElementById("wb").style.display = "none";
     }
-    function numberOfAreas(){
-        let n=parseInt(document.getElementById("noa").value);
-        for(let i=1;i<16;i++){
-            document.getElementById(i.toString()).value = "";
-            document.getElementById(i.toString()).style.display = "block";
 
-            document.getElementById("0"+i.toString()).style.display = "block";
+    function topPontoon() {
+        var oor = parseFloat(document.getElementById("oor").value);
+        var oir = parseFloat(document.getElementById("oir").value);
+        var pplate = parseFloat(document.getElementById("pplate").value);
+        var ttp = parseFloat(document.getElementById("ttp").value);
+        //document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp);
+        document.getElementById("tpw").value = oor;
+    }
 
-        }
+    function bottomPontoon() {
+        var oor = document.getElementById("oor").value;
+        var oir = document.getElementById("oir").value;
+        var pplate = document.getElementById("pplate").value;
+        var tbp = document.getElementById("tbp").value;
+        document.getElementById("bpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * tbp);
+    }
 
-        for(let i=15;i>n;i--){
-            document.getElementById(i.toString()).value = 0;
-            document.getElementById(i.toString()).style.display = "none";
+    function operationFloatation() {
+        let wp = parseFloat(document.getElementById("wp").value);
+        let pp = parseFloat(document.getElementById("pproduct").value);
+        let oor = parseFloat(document.getElementById("oor").value);
+        let oir = parseFloat(document.getElementById("oir").value);
+        let v1 = parseFloat(document.getElementById("v1").value);
+        let hdeck =parseFloat( document.getElementById("hdeck").value);
 
-            document.getElementById("0"+i.toString()).style.display = "none";
-        }
 
-
+        let vd = wp / (pp * 100);
+        document.getElementById("pdv").value = vd;
+        let dp= (vd - v1) * Math.pow(1000, 3) / ((3.14 / 4)*(Math.pow(oor,2)-Math.pow(oir,2)));
+        document.getElementById("dp").value =dp;
+        document.getElementById("diffh").value= dp - hdeck;
 
     }
 
@@ -865,6 +768,7 @@
 
 
     }
+
 
     function outerRim() {
         var oor = document.getElementById("oor").value;
@@ -901,28 +805,22 @@
         document.getElementById("dpw").value = (3.14159 / 4) * (oir * oir) * td * pplate;
     }
 
-    function topPontoon() {
-        var oor = parseFloat(document.getElementById("oor").value);
-        var oir = parseFloat(document.getElementById("oir").value);
-        var pplate = parseFloat(document.getElementById("pplate").value);
-        var ttp = parseFloat(document.getElementById("ttp").value);
-        //document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp);
-        document.getElementById("tpw").value = oor;
-    }
-
-    function bottomPontoon() {
-        var oor = document.getElementById("oor").value;
-        var oir = document.getElementById("oir").value;
-        var pplate = document.getElementById("pplate").value;
-        var tbp = document.getElementById("tbp").value;
-        document.getElementById("bpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * tbp);
-    }
-
     function pontoonLegs() {
         var np = document.getElementById("np").value;
         var pls = document.getElementById("pls").value;
         var pll = document.getElementById("pll").value;
         document.getElementById("plw").value = (np * pls * pll) / 1000;
+
+    }
+
+
+    function tests() {
+        document.getElementById("testing").value = parseFloat(document.getElementById("test").value);
+
+    }
+
+    function testss() {
+        document.getElementById("pproduct").value = document.getElementById("testing").value;
 
     }
 
@@ -965,6 +863,31 @@
     }
 
 
+    function volume1() {
+        var h1 = parseFloat(document.getElementById("h1").value);
+        var oir = parseFloat(document.getElementById("oir").value);
+        var w = parseFloat(document.getElementById("w").value);
+        document.getElementById("v1").value = (0.5 * h1 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+        var h2 = parseFloat(document.getElementById("h2").value);
+        var oor = parseFloat(document.getElementById("oor").value);
+        document.getElementById("v2").value = (h2 * 1.6 * (((oir + oor) / 2) / 100));
+    }
+
+    function volume2() {
+
+    }
+
+    function volume3() {
+        var h3 = document.getElementById("h3").value;
+        var oir = document.getElementById("oir").value;
+        var w = document.getElementById("w").value;
+        var v1 = document.getElementById("v1").value;
+        var v2 = document.getElementById("v2").value;
+        var v3 = (0.5 * h3 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+        document.getElementById("v3").value = v3;
+        document.getElementById("vol").value = v1 + v2 + v3;
+    }
+
     function wPontoon() {
         let tpw = parseFloat(document.getElementById("tpw").value);
         let bpw = parseFloat(document.getElementById("bpw").value);
@@ -986,28 +909,6 @@
         document.getElementById("wr").value = wp + wd;
     }
 
-    function volume1() {
-        var h1 = parseFloat(document.getElementById("h1").value);
-        var oir = parseFloat(document.getElementById("oir").value);
-        var w = parseFloat(document.getElementById("w").value);
-        document.getElementById("v1").value = (0.5 * h1 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
-        var h2 = parseFloat(document.getElementById("h2").value);
-        var oor = parseFloat(document.getElementById("oor").value);
-        document.getElementById("v2").value = h2 * 1.6 * (((oir + oor) / 2) / 100);
-    }
-
-
-    function volume3() {
-        var h3 = parseFloat(document.getElementById("h3").value);
-        var oir = parseFloat(document.getElementById("oir").value);
-        var w = parseFloat(document.getElementById("w").value);
-        var v1 = parseFloat(document.getElementById("v1").value);
-        var v2 = parseFloat(document.getElementById("v2").value);
-        var v3 = (0.5 * h3 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
-        document.getElementById("v3").value = v3;
-        document.getElementById("vol").value = v1 + v2 + v3;
-    }
-
     function tdE() {
         var wd = document.getElementById("wd").value;
         var dpw = document.getElementById("dpw").value;
@@ -1017,67 +918,6 @@
         document.getElementById("tde").value = (wd / dpw) * td;
         document.getElementById("dd").value = ((pplate / (pproduct * 1000))) * (wd / dpw) * td;
         operationFloatation();
-
-    }
-
-    function operationFloatation() {
-        let wp = parseFloat(document.getElementById("wp").value);
-        let pp = parseFloat(document.getElementById("pproduct").value);
-        let oor = parseFloat(document.getElementById("oor").value);
-        let oir = parseFloat(document.getElementById("oir").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        let dd = parseFloat(document.getElementById("dd").value);
-
-
-        let vd = wp / (pp * 100);
-        document.getElementById("pdv").value = vd;
-        let dp = (vd - v1) * Math.pow(1000, 3) / ((3.14 / 4) * (Math.pow(oor, 2) - Math.pow(oir, 2)));
-        document.getElementById("dp").value = dp;
-        document.getElementById("diffh").value = dp - dd;
-
-
-        {# **** part2 ****
-
-        let h1 = parseFloat(document.getElementById("h1").value);
-        let w = parseFloat(document.getElementById("w").value);
-        let h = parseFloat(document.getElementById("h").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        #}
-
-    }
-
-
-    function accumulatedRainWater() {
-        let oir = parseFloat(document.getElementById("oir").value);
-        let hrain = parseFloat(document.getElementById("hrain").value);
-        let wroof = parseFloat(document.getElementById("wr").value);
-        let pp = parseFloat(document.getElementById("pproduct").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        let va = parseFloat(document.getElementById("va").value);
-        let adeck = (Math.PI / 4) * Math.pow(oir, 2);
-        let vrain = adeck * hrain * 1000000000;
-        let wrain = vrain * 1000;
-        let vdisplacement = ((wroof + wrain) * 1000) / (pp * 1000);
-        document.getElementById("hdeckr").value = (vdisplacement - v1 - va) / ((Math.PI / 4) * Math.pow((oir / 1000), 2)) * 1000;
-        document.getElementById("adeck").value = adeck;
-        document.getElementById("vrain").value = vrain;
-        document.getElementById("wrain").value = wrain;
-        document.getElementById("vdisplacement").value = vdisplacement;
-        document.getElementById("alpha").value = oir / 2;
-
-    }
-
-    function centreDeckStress() {
-        let v = parseFloat(document.getElementById("pr").value);
-        document.getElementById("k1").value = (5.33 / (1 - Math.pow(v, 2)));
-        document.getElementById("k2").value = (2.6 / (1 - Math.pow(v, 2)));
-        document.getElementById("k31").value = (2 / (1 - v));
-        document.getElementById("k32").value = (4 / (1 - Math.pow(v, 2)));
-        document.getElementById("k41").value = 0.976;
-        document.getElementById("k42").value = 1.73;
-
-
     }
 
     function noRainWater() {
@@ -1108,93 +948,37 @@
         document.getElementById("y1").value = y1;
         document.getElementById("otc1").value = (k31 * y1 / t + k41 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
         document.getElementById("obc1").value = k31 * y1 * e * t / Math.pow(alpha, 2);
-        document.getElementById("odc1").value = k41 * Math.pow(y1, 2) * e / Math.pow(alpha, 2);
+        document.getElementById("odc1").value = k41 * Math.pow(y, 2) * e / Math.pow(alpha, 2);
         document.getElementById("ote1").value = (k32 * y1 / t + k42 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
         document.getElementById("obe1").value = k32 * y1 * e * t / Math.pow(alpha, 2);
-        document.getElementById("ode1").value = k42 * Math.pow(y1, 2) * e / Math.pow(alpha, 2);
-        document.getElementById("rh1").value = (k41 * Math.pow(y1, 2) * e / Math.pow(alpha, 2)) * t;
+        document.getElementById("ode1").value = k42 * Math.pow(y, 2) * e / Math.pow(alpha, 2);
+        document.getElementById("rh1").value = (k41 * Math.pow(y, 2) * e / Math.pow(alpha, 2)) * t;
 
     }
 
-    function rainWater() {
-        let hrain = parseFloat(document.getElementById("hrain1").value);
-        let oir = parseFloat(document.getElementById("oir").value);
-        let hdeckr = parseFloat(document.getElementById("hdeckr").value);
-        let pp = parseFloat(document.getElementById("pproduct").value);
-        let wd = parseFloat(document.getElementById("wd").value);
-        let a = (oir) / 2;
-        let adeck = (Math.PI / 4) * (Math.pow(oir, 2));
-        let vrain = adeck * hrain / Math.pow(1000, 3);
-        let wrain = vrain * 1000;
-        let ubl = ((Math.PI / 4) * Math.pow(oir, 2) * hdeckr * pp * 1000) / 1000000000;
-        let dl = wrain + wd;
-        let ndfad = (ubl - dl) / adeck;
-        let q2 = ndfad * 9.81 / 1000000;
-        document.getElementById("q2").value = q2;
-        document.getElementById("adeck1").value = adeck;
-        document.getElementById("vrain1").value = vrain;
-        document.getElementById("wrain").value = wrain;
-        document.getElementById("ubl").value = ubl;
-        document.getElementById("ndfad").value = ndfad;
-        document.getElementById("dl").value = dl;
-
-        {# ***************     part 2     *************** #}
-
-
-        var k2 = parseFloat(document.getElementById("k2").value);
-        var alpha = parseFloat(document.getElementById("alpha").value);
-        var e = parseFloat(document.getElementById("e").value);
-        var t = parseFloat(document.getElementById("t").value);
-        var k1 = parseFloat(document.getElementById("k1").value);
-        var k31 = parseFloat(document.getElementById("k31").value);
-        var k41 = parseFloat(document.getElementById("k41").value);
-        var k32 = parseFloat(document.getElementById("k32").value);
-        var k42 = parseFloat(document.getElementById("k42").value);
-
-
-        var y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q2 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
-        document.getElementById("y2").value = y1;
-        document.getElementById("otc2").value = (k31 * y1 / t + k41 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
-        document.getElementById("obc2").value = k31 * y1 * e * t / Math.pow(alpha, 2);
-        document.getElementById("odc2").value = k41 * Math.pow(y1, 2) * e / Math.pow(alpha, 2);
-        document.getElementById("ote2").value = (k32 * y1 / t + k42 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
-        document.getElementById("obe2").value = k32 * y1 * e * t / Math.pow(alpha, 2);
-        document.getElementById("ode2").value = k42 * Math.pow(y1, 2) * e / Math.pow(alpha, 2);
-        document.getElementById("rh2").value = (k41 * Math.pow(y1, 2) * e / Math.pow(alpha, 2)) * t;
-
-
-    }
-    {# azer #}
-
-    function myFunction() {
-
-        let tir = parseFloat(document.getElementById("tir").value);
-        let hir = parseFloat(document.getElementById("hir").value);
-        let tpl = parseFloat(document.getElementById("tpl").value);
-        let bpl = parseFloat(document.getElementById("bpl").value);
-        let ttp = parseFloat(document.getElementById("ttp").value);
-        let horwep = parseFloat(document.getElementById("horwep").value);
-        let tor = parseFloat(document.getElementById("tor").value);
-        let tbp = parseFloat(document.getElementById("tbp").value);
-        let piw = parseFloat(document.getElementById("piw").value);
-
-        let a1 = tir * hir;
-        let a2 = tpl * ttp;
-        let a3 = bpl * tbp;
-        let a4 = horwep * tor;
-        let ta = a1 + a2 + a3 + a4;
-
-        let y1 = tir / 2;
-        let y2 = 0.5 * piw + tir;
-        let y3 = 0.5 * piw + tir;
-        let y4 = 0.5 * tor + piw + tir;
-        let tay = a1 * y1 + a2 * y2 + a3 * y3 + a4 * y4;
-        let c1 = tay / ta;
-        let h1 = Math.abs(y1 - c1);
-        let h2 = Math.abs(y2 - c1);
-        let h3 = Math.abs(y3 - c1);
-        let h4 = Math.abs(y4 - c1);
-
+    function table1() {
+        var tir = document.getElementById("tir").value;
+        var hir = document.getElementById("hir").value;
+        var tpl = document.getElementById("tpl").value;
+        var bpl = document.getElementById("bpl").value;
+        var ttp = document.getElementById("ttp").value;
+        var horwep = document.getElementById("horwep").value;
+        var tor = document.getElementById("tor").value;
+        var tbp = document.getElementById("tbp").value;
+        var piw = document.getElementById("piw").value;
+        var c1 = document.getElementById("c1").value;
+        a1 = tir * hir;
+        a2 = tpl * ttp;
+        a3 = bpl * tbp;
+        a4 = horwep * tor;
+        y1 = tir / 2;
+        y2 = 0.5 * piw + tir;
+        y3 = 0.5 * piw + tir;
+        y4 = 0.5 * tor + piw + tir;
+        h1 = Math.abs(y1 - c1);
+        h2 = Math.abs(y2 - c1);
+        h3 = Math.abs(y3 - c1);
+        h4 = Math.abs(y4 - c1);
         document.getElementById("ta1").value = a1;
         document.getElementById("ta2").value = a2;
         document.getElementById("ta3").value = a3;
@@ -1219,108 +1003,23 @@
         document.getElementById("ti2").value = Math.abs((ttp * Math.pow(tpl, 3)) / 12);
         document.getElementById("ti3").value = Math.abs((tbp * Math.pow(bpl, 3)) / 12);
         document.getElementById("ti4").value = Math.abs((horwep * Math.pow(tor, 3)) / 12);
-        document.getElementById("tot1").value = ta;
-        document.getElementById("tot3").value = tay;
-        let tah = a1 * Math.pow(h1, 2) + a2 * Math.pow(h2, 2) + a3 * Math.pow(h3, 2) + a4 * Math.pow(h4, 2);
-        document.getElementById("tot5").value = tah;
-        let ti = Math.abs((hir * Math.pow(tir, 3)) / 12) + Math.abs((ttp * Math.pow(tpl, 3)) / 12) + Math.abs((tbp * Math.pow(bpl, 3)) / 12) + Math.abs((horwep * Math.pow(tor, 3)) / 12);
-        document.getElementById("tot6").value = ti;
+        document.getElementById("tot1").value = Math.sum(a1, a2, a3, a4);
+        document.getElementById("tot1").value = Math.sum(a1 * y1, a2 * y2, a3 * y3, a4 * y4);
+        document.getElementById("tot1").value = Math.sum(a1 * Math.pow(h1, 2), a2 * Math.pow(h2, 2), a3 * Math.pow(h3, 2), a4 * Math.pow(h4, 2));
+        document.getElementById("tot1").value = Math.sum(Math.abs((hir * Math.pow(tir, 3)) / 12), Math.abs((ttp * Math.pow(tpl, 3)) / 12), Math.abs((tbp * Math.pow(bpl, 3)) / 12), Math.abs((horwep * Math.pow(tor, 3)) / 12))
 
-        let lx = ti + tah;
-
-
-        document.getElementById("za").value = (lx / Math.max(c1, ((piw + tir + tor) - c1)))
-        document.getElementById("lx").value = lx;
-        document.getElementById("c1").value = c1;
     }
 
+    function pontoonResult() {
+        /* let rh1= parseFloat(document.getElementById("rh1").value);
+         let rh2= parseFloat(document.getElementById("rh2").value);
+         let do= parseFloat(document.getElementById("oir").value);
+         let a= parseFloat(document.getElementById("alpha").value);
+         let rh1= parseFloat(document.getElementById("rh1").value);
+         let rh1= parseFloat(document.getElementById("rh1").value);
+         let rh1= parseFloat(document.getElementById("rh1").value);*/
 
-    function pontoonStressDesign() {
-        let sy = parseFloat(document.getElementById("sy").value);
-        let oir = parseFloat(document.getElementById("oir").value);
-        let rh1 = parseFloat(document.getElementById("rlr1").value);
-        let rh2 = parseFloat(document.getElementById("rlr2").value);
-        let za = parseFloat(document.getElementById("za").value);
-        let ta = parseFloat(document.getElementById("tot1").value);
-
-
-
-
-        let nlp = Math.PI * oir;
-        let a = 0.5 * 360 / nlp;
-        let fb =(2 / 3) * sy;
-        let fc=0.6 * sy;
-
-
-        document.getElementById("fb").value = fb;
-        document.getElementById("fc").value = fc;
-        document.getElementById("nlp").value = nlp;
-        document.getElementById("a0").value = a;
-
-        // part 2
-
-
-        let bm1 = ((rh1 * oir) / 4) * ((1 / Math.sin(a)) - (1 / a));
-        let bm2 = ((rh2 * oir) / 4) * ((1 / a) - (1 / Math.tan(a)));
-        let cf1 = rh1 / (2 * Math.sin(a));
-        let cf2 = rh2 / (2 * Math.tan(a));
-        let bs1 = bm1/za;
-        let bs2 = bm2/za;
-        let cs1 = cf1/ta;
-        let cs2 = cf2/ta;
-        let uc1 = (bs1/fb)+(cs1/fc);
-        let uc2 = (bs2/fb)+(cs2/fc);
-        document.getElementById("c11").value=bm1;
-        document.getElementById("c12").value=bm2;
-
-        document.getElementById("c21").value=cf1;
-        document.getElementById("c22").value=cf2;
-
-        document.getElementById("c31").value=bs1;
-        document.getElementById("c32").value=bs2;
-
-        document.getElementById("c41").value=cs1;
-        document.getElementById("c42").value=cs2;
-
-        document.getElementById("c51").value = fb;
-        document.getElementById("c52").value = fb;
-        document.getElementById("c61").value = fc;
-        document.getElementById("c62").value = fc;
-
-
-        document.getElementById("c71").value = uc1;
-        document.getElementById("c72").value = uc2;
-
-        document.getElementById("c81").value = condition(uc1);
-        document.getElementById("c82").value = condition(uc2);
-
-
-
-        function condition(x){
-        if (Math.abs(x)<1) {
-            return "valid";
-        }
-        else {
-            return "not valid";
-        }
-        }
-}
-
-
-
-
-
-
-
-    {# ******************************************************************************************************************* #}
-
-
-
-
-
-
-
-
+    }
 
     function table2() {
 
