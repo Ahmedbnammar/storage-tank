@@ -1,17 +1,19 @@
-
-<h1>TANK GEOMETRY DATA</h1>
+<h2>TANK GEOMETRY DATA</h2>
 <label for="di">Inside diameter,Di(corroded)</label><br/>
 <p><input id="di" name="InsideDiameterDiCorroded" placeholder="InsideDiameterDiCorroded..."/></p>
 <label for="th">Tank height,H</label><br/>
 <p><input id="th" name="tankHeight" placeholder="tankHeight..."/></p>
 <label for="materialOfConstruction">Meterial of construction</label><br/>
-<select class="active" id="materialOfConstruction" name="materialOfConstruction" onchange="materialValues()" style="--amber-200: black;width: 350px;">
-<option style="align-self: center" value="A283M Gr C">Select a Material</option>
-<option value="A283M Gr C">A283M Gr C</option>
-<option value="A285M Gr C">A285M Gr C</option>
-</select><br/><br/>
+<p>
+    <select class="active" id="materialOfConstruction" name="materialOfConstruction" onchange="materialValues()">
+        <option style="align-self: center" value="A283M Gr C">Select a Material</option>
+        <option value="A283M Gr C">A283M Gr C</option>
+        <option value="A285M Gr C">A285M Gr C</option>
+    </select>
+</p>
 <label for="specificMinimumYieldStress"> Specific minimum Yield Stress,Sy </label><br/>
-<p><input id="specificMinimumYieldStress" name="specificMinimumYieldStress" placeholder="specificMinimumYieldStress..." readonly=""/></p>
+<p><input id="specificMinimumYieldStress" name="specificMinimumYieldStress" placeholder="specificMinimumYieldStress..."
+          readonly=""/></p>
 <label for="modulusOfElasticity">Modulus of Elasticity </label><br/>
 <p><input id="modulusOfElasticity" name="modulusOfElasticity" placeholder="modulusOfElasticity" readonly=""/></p>
 <label for="pplate">Density of Material,ρ(plate) </label><br/>
