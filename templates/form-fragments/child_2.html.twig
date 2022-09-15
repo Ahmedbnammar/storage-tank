@@ -1,0 +1,53 @@
+MEMBER SIZE &amp; PROPERTIES:
+        <label for="tor"> Outer Rim Thk, Tor </label><br/>
+<p><input id="tor" name="tor" placeholder="tor..."/></p>
+<label for="tir"> Inner Rim Thk </label><br/>
+<p><input id="tir" name="tir" placeholder="tir..."/></p>
+<label for="ttp"> Top Pontoon Thk </label><br/>
+<p><input id="ttp" name="ttp" placeholder="ttp..."/></p>
+<label for="tbp"> Btm Pontoon Thk </label><br/>
+<p><input id="tbp" name="tbp" placeholder="tbp..."/></p>
+<label for="tb"> Bulkheads Thk </label><br/>
+<p><input id="tb" name="tb" placeholder="tb"/></p>
+<label for="td"> Deck Plate Thickness </label><br/>
+<p><input id="td" name="td" onchange="gData()" placeholder="td"/></p>
+<label for="ct"> Circumferential Truss Plates </label><br/>
+<p><input id="ct" name="circumferentialTrussPlates" placeholder="circumferentialTrussPlates"/></p>
+<div class="row clearfix">
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="rf"> Rafter </label><br/>
+<input id="rf" name="rafter" placeholder="Rafter">
+</input></div>
+</div>
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="rafterNos"> Nos.of </label><br/>
+<input id="rafterNos" name="rafterNos" onchange="outerRim();innerRim();topPontoon();bottomPontoon();bulkheads();deckPlate()" placeholder="Nos.of">
+</input></div>
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="rafterWeight"> At unit weight of </label><br/>
+<input id="rafterWeight" name="rafterWeight" placeholder="At unit weight of">
+</input></div>
+</div>
+</div>
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="pt"> posts </label><br/>
+<input id="pt" name="posts" placeholder="posts">
+</input></div>
+</div>
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="postNos"> postsNos </label><br/>
+<input id="postNos" name="postsNos" placeholder="postsNos">
+</input></div>
+<div class="col_half">
+<div class="input_field"><span><i aria-hidden="true"></i></span>
+<label for="postWeight"> At unit weight of </label><br/>
+<input id="postWeight" name="postsWeight" placeholder="At unit weight of">
+</input></div>
+</div>
+</div>
+</div>

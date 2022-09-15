@@ -1,0 +1,22 @@
+
+<h1>PONTOON MATERIAL PROPERTIES</h1>
+<label for="materialOfConstruction">Meterial of construction</label><br/>
+<select class="active" id="materialOfConstruction2" name="materialOfConstruction" onchange="materialValues()" style="--amber-200: black;width: 350px;">
+<option style="align-self: center" value="A283M Gr C">Select a Material</option>
+<option value="A283M Gr C">A283M Gr C</option>
+<option value="A285M Gr C">A285M Gr C</option>
+</select>
+<label for="sy">Specified minimum yield stress, Sy</label><br/>
+<p><input id="sy" name="sy"/></p>
+<label for="k">Yield strength reduction factor, k </label><br/>
+<p><input id="k" name="k" placeholder="Yield strength reduction factor, k ..."/></p>
+<label for="ks">Allowable stress reduction factor, ks</label><br/>
+<p><input id="ks" name="ks" onchange="pontoonStressDesign()"/></p>
+<label for="fb">Allowable bending stress, Fb</label><br/>
+<p><input id="fb" readonly=""/></p>
+<label for="fc">Allowable compressive stress, Fc</label><br/>
+<p><input id="fc" readonly=""/></p>
+<label for="nlp">Number of load point at each mm,Nlp</label><br/>
+<p><input id="nlp" readonly=""/></p>
+<label for="a0">Angle α°</label><br/>
+<p><input id="a0" readonly=""/></p>
