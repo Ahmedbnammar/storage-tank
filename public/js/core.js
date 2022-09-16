@@ -36,19 +36,76 @@ function hide1() {
 
 function numberOfAreas() {
     let n = parseInt(document.getElementById("noa").value);
+    let x;
     for (let i = 1; i < 16; i++) {
-        document.getElementById(i.toString()).value = "";
-        document.getElementById(i.toString()).style.display = "block";
+        x=i.toString();
+        document.getElementById(x).value = "";
+        document.getElementById(x).style.display = "block";
+        document.getElementById("0" + x).style.display = "block";
 
-        document.getElementById("0" + i.toString()).style.display = "block";
+
+        document.getElementById("r"+x).value = "";
+        document.getElementById("r"+x).style.display = "block";
+        document.getElementById("r0" + x).style.display = "block";
+
+        document.getElementById("lsp"+x).value = "";
+        document.getElementById("lsp"+x).style.display = "block";
+        document.getElementById("lsp0" + x).style.display = "block";
+
+        document.getElementById("reff"+x).value = "";
+        document.getElementById("reff"+x).style.display = "block";
+        document.getElementById("reff0" + x).style.display = "block";
+
+
+        document.getElementById("aeff"+x).value = "";
+        document.getElementById("aeff"+x).style.display = "block";
+        document.getElementById("aeff0" + x).style.display = "block";
+        document.getElementById("aieff"+x).value = "";
+        document.getElementById("aieff"+x).style.display = "block";
+        document.getElementById("aieff0" + x).style.display = "block";
+
+        document.getElementById("dl"+x).value = "";
+        document.getElementById("dl"+x).style.display = "block";
+        document.getElementById("dl0" + x).style.display = "block";
+        document.getElementById("ll"+x).value = "";
+        document.getElementById("ll"+x).style.display = "block";
+        document.getElementById("ll0" + x).style.display = "block";
 
     }
 
     for (let i = 15; i > n; i--) {
-        document.getElementById(i.toString()).value = 0;
-        document.getElementById(i.toString()).style.display = "none";
+        x=i.toString()  ;
+        document.getElementById(x).value = 0;
+        document.getElementById(x).style.display = "none";
+        document.getElementById("0"+x).style.display = "none";
 
-        document.getElementById("0" + i.toString()).style.display = "none";
+        document.getElementById("r"+x).value = 0;
+        document.getElementById("r"+x).style.display = "none";
+        document.getElementById("r0"+x).style.display = "none";
+
+        document.getElementById("lsp"+x).value = 0;
+        document.getElementById("lsp"+x).style.display = "none";
+        document.getElementById("lsp0"+x).style.display = "none";
+
+        document.getElementById("reff"+x).value = 0;
+        document.getElementById("reff"+x).style.display = "none";
+        document.getElementById("reff0"+x).style.display = "none";
+
+        document.getElementById("aeff"+x).value = 0;
+        document.getElementById("aeff"+x).style.display = "none";
+        document.getElementById("aeff0"+x).style.display = "none";
+        document.getElementById("aieff"+x).value = 0;
+        document.getElementById("aieff"+x).style.display = "none";
+        document.getElementById("aieff0"+x).style.display = "none";
+
+        document.getElementById("dl"+x).value = 0;
+        document.getElementById("dl"+x).style.display = "none";
+        document.getElementById("dl0"+x).style.display = "none";
+        document.getElementById("ll"+x).value = 0;
+        document.getElementById("ll"+x).style.display = "none";
+        document.getElementById("ll0"+x).style.display = "none";
+
+
     }
 
 
