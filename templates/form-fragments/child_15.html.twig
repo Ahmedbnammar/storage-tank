@@ -1,5 +1,19 @@
-PONTOON STRESS DESIGN:
-        <h1>PONTOON PROPERTIES</h1>
+
+<div class="d-flex gap-2">
+        <h2>PONTOON STRESS DESIGN</h2>
+        <i class="fa fa-question-circle-o"></i>
+        <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#fig5Modal">
+                <img src="{{ asset('images/question-mark.svg') }}" alt="fig5" width="20" height="20">
+        </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+        "modalId": "fig5Modal",
+        "imageSrc": asset('images/5.png'),
+} %}
+
+<h3>PONTOON PROPERTIES</h3>
 <label for="pdir">Nominal diameter of Inner Rim</label><br/>
 <p><input id="pdir" name="pdir" placeholder="Nominal diameter of Inner Rim..."/></p>
 <label for="piw">pontoon inside width</label><br/>

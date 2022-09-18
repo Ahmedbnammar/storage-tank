@@ -1,5 +1,17 @@
-ROOF SUPPORT LEG:
-        <h1>PONTOON VOLUME</h1>
+<div class="d-flex gap-2">
+        <h2>PONTOON VOLUME</h2>
+        <i class="fa fa-question-circle-o"></i>
+        <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#fig2Modal">
+                <img src="{{ asset('images/question-mark.svg') }}" alt="fig2" width="20" height="20">
+        </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+        "modalId": "fig2Modal",
+        "imageSrc": asset('images/2.png'),
+} %}
+
 <label for="h1"> h1 </label><br/>
 <p><input id="h1" name="h1" placeholder="h1..."/></p>
 <label for="h2"> h2 </label><br/>

@@ -1,6 +1,18 @@
-SETTING DECK LEVEL:
+<div class="d-flex gap-2">
+        <h2>Operation floatation level – Deck</h2>
+        <i class="fa fa-question-circle-o"></i>
+        <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#fig3Modal">
+                <img src="{{ asset('images/question-mark.svg') }}" alt="fig3" width="20" height="20">
+        </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+        "modalId": "fig3Modal",
+        "imageSrc": asset('images/3.png'),
+} %}
 
-        <h1>Operation floatation level – Deck</h1>
+
 <label for="tde"> equivalent thickness , Td(equivalent)</label><br/>
 <p><input id="tde" name="tde" placeholder="tde" readonly=""/></p>
 <label for="dd">Floatation height above deck ,H(deck) </label><br/>

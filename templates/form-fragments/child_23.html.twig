@@ -1,3 +1,16 @@
+<div class="d-flex gap-2">
+    <h2>PONTOON MATERIAL PROPERTIES</h2>
+    <i class="fa fa-question-circle-o"></i>
+    <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+            data-bs-toggle="modal"
+            data-bs-target="#fig8Modal">
+        <img src="{{ asset('images/question-mark.svg') }}" alt="fig8" width="20" height="20">
+    </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+    "modalId": "fig8Modal",
+    "imageSrc": asset('images/8.png'),
+} %}
 
 <h3 style="color: #818cf8">Effective radius for area of deck supported by leg</h3>
 <label for="reff1" id="reff01">R1eff</label><br/>

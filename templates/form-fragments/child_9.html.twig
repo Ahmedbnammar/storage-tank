@@ -1,5 +1,17 @@
-SETTING DECK LEVEL:
-        <h1>Operation floatation level – Deck</h1>
+<div class="d-flex gap-2">
+        <h2>Operation floatation level – Deck</h2>
+        <i class="fa fa-question-circle-o"></i>
+        <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#fig4Modal">
+                <img src="{{ asset('images/question-mark.svg') }}" alt="fig4" width="20" height="20">
+        </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+        "modalId": "fig4Modal",
+        "imageSrc": asset('images/4.png'),
+} %}
+
 <label for="v12">Volume Displaced by the Backslope,v1 </label><br/>
 <p><input id="v12" name="v12 " placeholder="Volume Displaced by the Backslope..." readonly=""/></p>
 <label for="va">Partial volume displaced in pontoon below the deck level, Va </label><br/>
