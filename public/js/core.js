@@ -13,6 +13,7 @@ function materialValues() {
         document.getElementById("pplate").value = 7800;
     }
 }
+
 function materialValues2() {
     let x = document.getElementById("materialOfConstruction2").value;
     if (x === "A283M Gr C") {
@@ -56,8 +57,7 @@ function numberOfAreas() {
         document.getElementById("0" + x).style.display = "block";
 
 
-        document.getElementById("r" + x).value = "";
-        document.getElementById("r" + x).style.display = "block";
+        document.getElementById("rnos" + x).style.display = "block";
         document.getElementById("r0" + x).style.display = "block";
 
         document.getElementById("lsp" + x).value = "";
@@ -83,31 +83,22 @@ function numberOfAreas() {
         document.getElementById("ll" + x).style.display = "block";
         document.getElementById("ll0" + x).style.display = "block";
 
-    }
-    document.getElementById(n.toString()).onchange=function functionReff(){
-        let n = parseInt(document.getElementById("noa").value);
-
-        let oir = 14003.2;
-        let x ;
-        for(let i=1;i<n-1;i++) {
-
-            x= i.toString();
-            document.getElementById("reff" + x).value= 0.5*(parseFloat(document.getElementById(x).value) + parseFloat(document.getElementById((i+1).toString()).value));
-        }
-
-        document.getElementById("reff" + (n-1).toString()).value= 0.5*(parseFloat(document.getElementById((n-1).toString()).value) + (oir/2));
-        document.getElementById("reff" + n.toString()).value= (oir/2) ;
+        document.getElementById("tl" + x).value = "";
+        document.getElementById("tl" + x).style.display = "block";
+        document.getElementById("tl0" + x).style.display = "block";
+        document.getElementById("p" + x).value = "";
+        document.getElementById("p" + x).style.display = "block";
+        document.getElementById("p0" + x).style.display = "block";
 
     }
-
     for (let i = 15; i > n; i--) {
         x = i.toString();
         document.getElementById(x).value = 0;
         document.getElementById(x).style.display = "none";
         document.getElementById("0" + x).style.display = "none";
 
-        document.getElementById("r" + x).value = 0;
-        document.getElementById("r" + x).style.display = "none";
+        document.getElementById("rnos" + x).value = 0;
+        document.getElementById("rnos" + x).style.display = "none";
         document.getElementById("r0" + x).style.display = "none";
 
         document.getElementById("lsp" + x).value = 0;
@@ -132,6 +123,77 @@ function numberOfAreas() {
         document.getElementById("ll" + x).style.display = "none";
         document.getElementById("ll0" + x).style.display = "none";
 
+        document.getElementById("tl" + x).value = 0;
+        document.getElementById("tl" + x).style.display = "none";
+        document.getElementById("tl0" + x).style.display = "none";
+        document.getElementById("p" + x).value = 0;
+        document.getElementById("p" + x).style.display = "none";
+        document.getElementById("p0" + x).style.display = "none";
+
+
+    }
+
+    document.getElementById(n.toString()).onchange = function functionReff() {
+        let n = parseInt(document.getElementById("noa").value);
+
+        let oir= parseFloat(document.getElementById("oir").value);
+        let x;
+        let reff = 0;
+        let reff1 = 0;
+        for (let i = 1; i < n - 1; i++) {
+
+            x = i.toString();
+            reff1 = reff;
+            reff = 0.5 * (parseFloat(document.getElementById(x).value) + parseFloat(document.getElementById((i + 1).toString()).value));
+            document.getElementById("reff" + x).value = reff;
+            if (i > 1) {
+                document.getElementById("aeff" + x).value = (Math.PI * (Math.pow(reff, 2) - Math.pow(reff1, 2)));
+            }
+
+        }
+        document.getElementById("aeff1").value = Math.PI * Math.pow(parseFloat(document.getElementById("reff1").value), 2);
+
+        reff1 = 0.5 * (parseFloat(document.getElementById((n - 1).toString()).value) + (oir / 2));
+        document.getElementById("reff" + (n - 1).toString()).value = reff1;
+        document.getElementById("aeff" + (n - 1).toString()).value = Math.PI * (Math.pow(reff1, 2) - Math.pow(reff, 2));
+        document.getElementById("reff" + n.toString()).value = (oir / 2);
+        document.getElementById("aeff" + n.toString()).value = Math.PI * (Math.pow((oir / 2), 2) - (Math.pow(reff1, 2)));
+
+
+    }
+    document.getElementById("rnos" + n.toString()).onchange = function functionAieff() {
+
+    let wd= parseFloat(document.getElementById("wd").value);
+     let adeck= parseFloat(document.getElementById("adeck").value);
+      let rll = parseFloat(document.getElementById("rll").value);
+  let wp = parseFloat(document.getElementById("wp").value);
+        let aleg = parseFloat(document.getElementById("aleg").value);
+
+
+        let tl=0;
+        for (let i = 1; i < n + 1; i++) {
+            x = i.toString();
+
+
+            let y = parseInt(document.getElementById("rnos" + x).value);
+            let aieff = parseFloat(document.getElementById("aeff" + x).value) / parseFloat(document.getElementById("rnos" + x).value);
+            document.getElementById("aieff" + x).value = aieff;
+            let dl= wd * aieff / adeck * 9.81 / 1000;
+            document.getElementById("dl" + x).value =dl;
+            let ll = parseFloat(document.getElementById("aieff" + x).value) * rll / 1000000;
+            document.getElementById("ll" + x).value = ll;
+            if(i<n){
+                tl= ll +dl;
+            }
+            else{
+                tl = ll+dl+wp/y*9.81/1000;
+
+            }
+            document.getElementById("tl" + x).value =tl;
+            document.getElementById("p" + x).value =tl/aleg*1000;
+
+        }
+
 
     }
 
@@ -150,11 +212,7 @@ function part4() {
     let pth = parseFloat(document.getElementById("pth").value);
 
 
-    let td = 154008419.74;
-    let oir = 14003.2;
-    let wd = 9957.42;
-    let rll = 1;
-    let wp = 16291.33;
+
 
     let pid = pod - (2 * pth);
     let aleg = (Math.PI / 4) * (Math.pow(pod, 2) - Math.pow(pid, 2));
@@ -470,15 +528,15 @@ function rainWater() {
     document.getElementById("dl").value = dl;
 
 
-    var k2 = parseFloat(document.getElementById("k2").value);
-    var alpha = parseFloat(document.getElementById("alpha").value);
-    var e = parseFloat(document.getElementById("e").value);
-    var t = parseFloat(document.getElementById("t").value);
-    var k1 = parseFloat(document.getElementById("k1").value);
-    var k31 = parseFloat(document.getElementById("k31").value);
-    var k41 = parseFloat(document.getElementById("k41").value);
-    var k32 = parseFloat(document.getElementById("k32").value);
-    var k42 = parseFloat(document.getElementById("k42").value);
+    let k2 = parseFloat(document.getElementById("k2").value);
+    let alpha = parseFloat(document.getElementById("alpha").value);
+    let e = parseFloat(document.getElementById("e").value);
+    let t = parseFloat(document.getElementById("t").value);
+    let k1 = parseFloat(document.getElementById("k1").value);
+    let k31 = parseFloat(document.getElementById("k31").value);
+    let k41 = parseFloat(document.getElementById("k41").value);
+    let k32 = parseFloat(document.getElementById("k32").value);
+    let k42 = parseFloat(document.getElementById("k42").value);
 
 
     var y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q2 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
