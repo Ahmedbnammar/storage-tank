@@ -17,8 +17,9 @@ class DashboardController extends AbstractDashboardController
 //        if ($this->getUser() && $this->isGranted('ROLE_ADMIN')) {
 //            return $this->render('bundles/EasyAdminBundle/index.html.twig');
 //        }
-//        return $this->redirectToRoute('app_logout');
+     //   return $this->redirectToRoute('app_logout');
         return $this->render('bundles/EasyAdminBundle/index.html.twig');
+
     }
 
 

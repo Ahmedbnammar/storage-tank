@@ -31,7 +31,6 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email', '');
-
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
         return new Passport(
@@ -50,7 +49,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         }
 
 
-         return new RedirectResponse($this->urlGenerator->generate('admin'));
+         return new RedirectResponse($this->urlGenerator->generate('app_floating_roof_data'));
     }
 
     protected function getLoginUrl(Request $request): string

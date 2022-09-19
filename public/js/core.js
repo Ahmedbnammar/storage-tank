@@ -13,7 +13,19 @@ function materialValues() {
         document.getElementById("pplate").value = 7800;
     }
 }
-
+function materialValues2() {
+    let x = document.getElementById("materialOfConstruction2").value;
+    if (x === "A283M Gr C") {
+        document.getElementById("specificMinimumYieldStress2").value = 205;
+        document.getElementById("modulusOfElasticity2").value = 209000;
+        document.getElementById("pplate2").value = 7850;
+    }
+    if (x === "A285M Gr C") {
+        document.getElementById("specificMinimumYieldStress2").value = 205;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }
+}
 
 function hide1() {
     document.getElementById("oor").value = 0;
@@ -38,78 +50,119 @@ function numberOfAreas() {
     let n = parseInt(document.getElementById("noa").value);
     let x;
     for (let i = 1; i < 16; i++) {
-        x=i.toString();
+        x = i.toString();
         document.getElementById(x).value = "";
         document.getElementById(x).style.display = "block";
         document.getElementById("0" + x).style.display = "block";
 
 
-        document.getElementById("r"+x).value = "";
-        document.getElementById("r"+x).style.display = "block";
+        document.getElementById("r" + x).value = "";
+        document.getElementById("r" + x).style.display = "block";
         document.getElementById("r0" + x).style.display = "block";
 
-        document.getElementById("lsp"+x).value = "";
-        document.getElementById("lsp"+x).style.display = "block";
+        document.getElementById("lsp" + x).value = "";
+        document.getElementById("lsp" + x).style.display = "block";
         document.getElementById("lsp0" + x).style.display = "block";
 
-        document.getElementById("reff"+x).value = "";
-        document.getElementById("reff"+x).style.display = "block";
+        document.getElementById("reff" + x).value = "";
+        document.getElementById("reff" + x).style.display = "block";
         document.getElementById("reff0" + x).style.display = "block";
 
 
-        document.getElementById("aeff"+x).value = "";
-        document.getElementById("aeff"+x).style.display = "block";
+        document.getElementById("aeff" + x).value = "";
+        document.getElementById("aeff" + x).style.display = "block";
         document.getElementById("aeff0" + x).style.display = "block";
-        document.getElementById("aieff"+x).value = "";
-        document.getElementById("aieff"+x).style.display = "block";
+        document.getElementById("aieff" + x).value = "";
+        document.getElementById("aieff" + x).style.display = "block";
         document.getElementById("aieff0" + x).style.display = "block";
 
-        document.getElementById("dl"+x).value = "";
-        document.getElementById("dl"+x).style.display = "block";
+        document.getElementById("dl" + x).value = "";
+        document.getElementById("dl" + x).style.display = "block";
         document.getElementById("dl0" + x).style.display = "block";
-        document.getElementById("ll"+x).value = "";
-        document.getElementById("ll"+x).style.display = "block";
+        document.getElementById("ll" + x).value = "";
+        document.getElementById("ll" + x).style.display = "block";
         document.getElementById("ll0" + x).style.display = "block";
+
+    }
+    document.getElementById(n.toString()).onchange=function functionReff(){
+        let n = parseInt(document.getElementById("noa").value);
+
+        let oir = 14003.2;
+        let x ;
+        for(let i=1;i<n-1;i++) {
+
+            x= i.toString();
+            document.getElementById("reff" + x).value= 0.5*(parseFloat(document.getElementById(x).value) + parseFloat(document.getElementById((i+1).toString()).value));
+        }
+
+        document.getElementById("reff" + (n-1).toString()).value= 0.5*(parseFloat(document.getElementById((n-1).toString()).value) + (oir/2));
+        document.getElementById("reff" + n.toString()).value= (oir/2) ;
 
     }
 
     for (let i = 15; i > n; i--) {
-        x=i.toString()  ;
+        x = i.toString();
         document.getElementById(x).value = 0;
         document.getElementById(x).style.display = "none";
-        document.getElementById("0"+x).style.display = "none";
+        document.getElementById("0" + x).style.display = "none";
 
-        document.getElementById("r"+x).value = 0;
-        document.getElementById("r"+x).style.display = "none";
-        document.getElementById("r0"+x).style.display = "none";
+        document.getElementById("r" + x).value = 0;
+        document.getElementById("r" + x).style.display = "none";
+        document.getElementById("r0" + x).style.display = "none";
 
-        document.getElementById("lsp"+x).value = 0;
-        document.getElementById("lsp"+x).style.display = "none";
-        document.getElementById("lsp0"+x).style.display = "none";
+        document.getElementById("lsp" + x).value = 0;
+        document.getElementById("lsp" + x).style.display = "none";
+        document.getElementById("lsp0" + x).style.display = "none";
 
-        document.getElementById("reff"+x).value = 0;
-        document.getElementById("reff"+x).style.display = "none";
-        document.getElementById("reff0"+x).style.display = "none";
+        document.getElementById("reff" + x).value = 0;
+        document.getElementById("reff" + x).style.display = "none";
+        document.getElementById("reff0" + x).style.display = "none";
 
-        document.getElementById("aeff"+x).value = 0;
-        document.getElementById("aeff"+x).style.display = "none";
-        document.getElementById("aeff0"+x).style.display = "none";
-        document.getElementById("aieff"+x).value = 0;
-        document.getElementById("aieff"+x).style.display = "none";
-        document.getElementById("aieff0"+x).style.display = "none";
+        document.getElementById("aeff" + x).value = 0;
+        document.getElementById("aeff" + x).style.display = "none";
+        document.getElementById("aeff0" + x).style.display = "none";
+        document.getElementById("aieff" + x).value = 0;
+        document.getElementById("aieff" + x).style.display = "none";
+        document.getElementById("aieff0" + x).style.display = "none";
 
-        document.getElementById("dl"+x).value = 0;
-        document.getElementById("dl"+x).style.display = "none";
-        document.getElementById("dl0"+x).style.display = "none";
-        document.getElementById("ll"+x).value = 0;
-        document.getElementById("ll"+x).style.display = "none";
-        document.getElementById("ll0"+x).style.display = "none";
+        document.getElementById("dl" + x).value = 0;
+        document.getElementById("dl" + x).style.display = "none";
+        document.getElementById("dl0" + x).style.display = "none";
+        document.getElementById("ll" + x).value = 0;
+        document.getElementById("ll" + x).style.display = "none";
+        document.getElementById("ll0" + x).style.display = "none";
 
 
     }
 
 
 }
+
+
+function part4() {
+    //  let oir = parseFloat(document.getElementById("oir").value);
+//let td = parseFloat(document.getElementById("td").value);
+//    let wd = parseFloat(document.getElementById("wd").value);
+//let rll = parseFloat(document.getElementById("rll").value);
+//    let wp = parseFloat(document.getElementById("wp").value);
+    let pod = parseFloat(document.getElementById("pod").value);
+    let slz = parseFloat(document.getElementById("slz").value);
+    let pth = parseFloat(document.getElementById("pth").value);
+
+
+    let td = 154008419.74;
+    let oir = 14003.2;
+    let wd = 9957.42;
+    let rll = 1;
+    let wp = 16291.33;
+
+    let pid = pod - (2 * pth);
+    let aleg = (Math.PI / 4) * (Math.pow(pod, 2) - Math.pow(pid, 2));
+    document.getElementById("rg").value = Math.sqrt(Math.pow(pod, 2) + Math.pow(pid, 2)) / 4;
+    document.getElementById("aleg").value = aleg;
+    document.getElementById("pid").value = pid;
+}
+
 
 function gData() {
     let di = parseFloat(document.getElementById("di").value);
@@ -147,7 +200,7 @@ function outerRim() {
     var tor = document.getElementById("tor").value;
     var pplate = document.getElementById("pplate").value;
     var hor = document.getElementById("hor").value;
-    document.getElementById("orw").value = ((3.14159 / 4) * ((oor * pplate * hor * tor)));
+    document.getElementById("orw").value = (Math.PI * ((oor * pplate * hor * tor))) / Math.pow(10, 9);
 }
 
 function innerRim() {
@@ -155,7 +208,7 @@ function innerRim() {
     var oir = document.getElementById("oir").value;
     var pplate = document.getElementById("pplate").value;
     var tir = document.getElementById("tir").value;
-    document.getElementById("irw").value = (3.14159 * oir * pplate * tir * hir);
+    document.getElementById("irw").value = (3.14159 * oir * pplate * tir * hir) / Math.pow(10, 9);
 }
 
 
@@ -166,15 +219,15 @@ function bulkheads() {
     var wb = parseFloat(document.getElementById("wb").value);
     var tb = parseFloat(document.getElementById("tb").value);
     var n = parseFloat(document.getElementById("n").value);
-    document.getElementById("bw").value = (1 / 2) * (boh + bih) * tb * wb * n * pplate;
+    document.getElementById("bw").value = (1 / 2) * (boh + bih) * tb * wb * n * pplate / Math.pow(10, 9);
 
 }
 
 function deckPlate() {
-    var oir = document.getElementById("oir").value;
-    var td = document.getElementById("td").value;
-    var pplate = document.getElementById("pplate").value;
-    document.getElementById("dpw").value = (3.14159 / 4) * (oir * oir) * td * pplate;
+    var oir = parseFloat(document.getElementById("oir").value);
+    var td = parseFloat(document.getElementById("td").value);
+    var pplate = parseFloat(document.getElementById("pplate").value);
+    document.getElementById("dpw").value = (Math.PI / 4) * (oir * oir) * td * pplate / Math.pow(10, 9);
 }
 
 function topPontoon() {
@@ -182,45 +235,45 @@ function topPontoon() {
     var oir = parseFloat(document.getElementById("oir").value);
     var pplate = parseFloat(document.getElementById("pplate").value);
     var ttp = parseFloat(document.getElementById("ttp").value);
-    //document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp);
-    document.getElementById("tpw").value = oor;
+    document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp) / Math.pow(10, 9);
+
 }
 
 function bottomPontoon() {
-    var oor = document.getElementById("oor").value;
-    var oir = document.getElementById("oir").value;
-    var pplate = document.getElementById("pplate").value;
-    var tbp = document.getElementById("tbp").value;
-    document.getElementById("bpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * tbp);
+    var oor = parseFloat(document.getElementById("oor").value);
+    var oir = parseFloat(document.getElementById("oir").value);
+    var pplate = parseFloat(document.getElementById("pplate").value);
+    var tbp = parseFloat(document.getElementById("tbp").value);
+    document.getElementById("bpw").value = ((Math.PI / 4) * ((Math.pow(oor, 2)) - (Math.pow(oir, 2))) * pplate * tbp) / Math.pow(10, 9);
 }
 
 function pontoonLegs() {
-    var np = document.getElementById("np").value;
-    var pls = document.getElementById("pls").value;
-    var pll = document.getElementById("pll").value;
-    document.getElementById("plw").value = (np * pls * pll) / 1000;
+    var np = parseFloat(document.getElementById("np").value);
+    var pls = parseFloat(document.getElementById("plsw").value);
+    var pll = parseFloat(document.getElementById("pll").value);
+    document.getElementById("plw").value = ((np * pls * pll) / 1000);
 
 }
 
 function pontoonLegsHousing() {
-    var np = document.getElementById("np").value;
-    var plh = document.getElementById("plh").value;
-    var plhl = document.getElementById("plhl").value;
+    var np = parseFloat(document.getElementById("np").value);
+    var plh = parseFloat(document.getElementById("plhweight").value);
+    var plhl = parseFloat(document.getElementById("plhl").value);
     document.getElementById("plhw").value = (np * plh * plhl) / 1000;
 
 }
 
 function deckLegs() {
-    var np = document.getElementById("nd").value;
-    var plh = document.getElementById("dls").value;
-    var plhl = document.getElementById("dll").value;
-    document.getElementById("dlw").value = (np * plh * plhl) / 1000;
+    var nd = parseFloat(document.getElementById("nd").value);
+    var plh = parseFloat(document.getElementById("DlsWeight").value);
+    var plhl = parseFloat(document.getElementById("dll").value);
+    document.getElementById("dlw").value = (nd * plh * plhl) / 1000;
 
 }
 
 function deckLegsHousing() {
     var np = document.getElementById("nd").value;
-    var plh = document.getElementById("dlh").value;
+    var plh = document.getElementById("DlhWeight").value;
     var plhl = document.getElementById("dlhl").value;
     document.getElementById("dlhw").value = (np * plh * plhl) / 1000;
 
@@ -228,20 +281,21 @@ function deckLegsHousing() {
 
 function rafters() {
     var w = document.getElementById("w").value;
-    var rafterNos = document.getElementById("rafterNos").value;
+    var rf = document.getElementById("rf").value;
     var rafterWeight = document.getElementById("rafterWeight").value;
-    document.getElementById("rw").value = rafterNos * w * rafterWeight;
+    document.getElementById("rw").value = w / 1000 * rf * rafterWeight;
     var hor = parseFloat(document.getElementById("hor").value);
     var hir = parseFloat(document.getElementById("hir").value);
     var hext = parseFloat(document.getElementById("hext").value);
     var postWeight = parseFloat(document.getElementById("postWeight").value);
-    var postNos = parseFloat(document.getElementById("postNos").value);
+    var postNos = parseFloat(document.getElementById("pt").value);
 
-    document.getElementById("pw").value = parseFloat(((hir + hor - hext) / 1000) * postNos * postWeight);
+    document.getElementById("pw").value = (((hir + hor - hext) / 2) / 1000) * postNos * postWeight;
 }
 
 
 function wPontoon() {
+    let dlhw = parseFloat(document.getElementById("dlhw").value);
     let tpw = parseFloat(document.getElementById("tpw").value);
     let bpw = parseFloat(document.getElementById("bpw").value);
     let irw = parseFloat(document.getElementById("irw").value);
@@ -256,7 +310,7 @@ function wPontoon() {
     let dlw = parseFloat(document.getElementById("dlw").value);
     let daw = parseFloat(document.getElementById("daw").value);
     let wp = tpw + bpw + irw + orw + bw + plhw + plw + paw + rw + pw;
-    let wd = dpw + dlw + daw;
+    let wd = dpw + dlw + daw + dlhw;
     document.getElementById("wp").value = wp;
     document.getElementById("wd").value = wd;
     document.getElementById("wr").value = wp + wd;
@@ -266,10 +320,10 @@ function volume1() {
     var h1 = parseFloat(document.getElementById("h1").value);
     var oir = parseFloat(document.getElementById("oir").value);
     var w = parseFloat(document.getElementById("w").value);
-    document.getElementById("v1").value = (0.5 * h1 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+    document.getElementById("v1").value = (Math.PI * 0.5 * h1 * 1.6 * ((oir + 2 * 2 / 3 * w) / 1000));
     var h2 = parseFloat(document.getElementById("h2").value);
     var oor = parseFloat(document.getElementById("oor").value);
-    document.getElementById("v2").value = h2 * 1.6 * (((oir + oor) / 2) / 100);
+    document.getElementById("v2").value = Math.PI * h2 * 1.6 * (((oir + oor) / 2) / 1000);
 }
 
 
@@ -279,7 +333,7 @@ function volume3() {
     var w = parseFloat(document.getElementById("w").value);
     var v1 = parseFloat(document.getElementById("v1").value);
     var v2 = parseFloat(document.getElementById("v2").value);
-    var v3 = (0.5 * h3 * 1.6 * (((oir + 2) * 2) / 3 * w) / 100);
+    var v3 = (0.5 * h3 * 1.6 * ((oir + 2 * 2 / 3 * w) / 1000)) * Math.PI;
     document.getElementById("v3").value = v3;
     document.getElementById("vol").value = v1 + v2 + v3;
 }
@@ -305,40 +359,38 @@ function operationFloatation() {
     let dd = parseFloat(document.getElementById("dd").value);
 
 
-    let vd = wp / (pp * 100);
+    let vd = wp / (pp * 1000);
     document.getElementById("pdv").value = vd;
-    let dp = (vd - v1) * Math.pow(1000, 3) / ((3.14 / 4) * (Math.pow(oor, 2) - Math.pow(oir, 2)));
+    let dp = (vd - v1) * Math.pow(1000, 3) / ((Math.PI / 4) * (Math.pow(oor, 2) - Math.pow(oir, 2)));
     document.getElementById("dp").value = dp;
     document.getElementById("diffh").value = dp - dd;
 
-    /*
-    {
-        # * * * * part2 ** * *
 
-        let
-        h1 = parseFloat(document.getElementById("h1").value);
-        let w = parseFloat(document.getElementById("w").value);
-        let h = parseFloat(document.getElementById("h").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        let v1 = parseFloat(document.getElementById("v1").value);
-        #
-    }
-    */
+    /*
+
+       let h1 = parseFloat(document.getElementById("h1").value);
+           let w = parseFloat(document.getElementById("w").value);
+           let h = parseFloat(document.getElementById("h").value);
+           let v1 = parseFloat(document.getElementById("v1").value);
+           let v1 = parseFloat(document.getElementById("v1").value);
+           */
+
 }
 
 
 function accumulatedRainWater() {
-    let oir = parseFloat(document.getElementById("oir").value);
+    let oor = parseFloat(document.getElementById("oor").value);
     let hrain = parseFloat(document.getElementById("hrain").value);
     let wroof = parseFloat(document.getElementById("wr").value);
     let pp = parseFloat(document.getElementById("pproduct").value);
     let v1 = parseFloat(document.getElementById("v1").value);
     let va = parseFloat(document.getElementById("va").value);
+    let oir = parseFloat(document.getElementById("oir").value);
     let adeck = (Math.PI / 4) * Math.pow(oir, 2);
-    let vrain = adeck * hrain * 1000000000;
+    let vrain = adeck * hrain / 1000000000;
     let wrain = vrain * 1000;
-    let vdisplacement = ((wroof + wrain) * 1000) / (pp * 1000);
-    document.getElementById("hdeckr").value = (vdisplacement - v1 - va) / ((Math.PI / 4) * Math.pow((oir / 1000), 2)) * 1000;
+    let vdisplacement = (((wroof + wrain) * 1000) / (pp * 1000)) / 1000;
+    document.getElementById("hdeckr").value = ((vdisplacement - v1 - va) / ((Math.PI / 4) * Math.pow((oor / 1000), 2))) * 1000;
     document.getElementById("adeck").value = adeck;
     document.getElementById("vrain").value = vrain;
     document.getElementById("wrain").value = wrain;
@@ -441,6 +493,7 @@ function rainWater() {
 
 
 }
+
 
 function myFunction() {
 
@@ -587,19 +640,19 @@ function pontoonStressDesign() {
 }
 
 function operationFloatationLevel() {
-    let oir = parseFloat(document.getElementById("oir").value);
+
     let oor = parseFloat(document.getElementById("oor").value);
     let bih = parseFloat(document.getElementById("bih").value);
     let wr = parseFloat(document.getElementById("wr").value);
     //  let h=parseFloat(document.getElementById("h").value);
     let pp = parseFloat(document.getElementById("pproduct").value);
-    let h1 = parseFloat(document.getElementById("h1").value);
-    let w = parseFloat(document.getElementById("w").value);
+
     let v2 = parseFloat(document.getElementById("v2").value);
+    let v1 = parseFloat(document.getElementById("v1").value);
+    let dp = parseFloat(document.getElementById("dp").value);
+    let dd = parseFloat(document.getElementById("dd").value);
 
-
-    let v1 = 0.5 * h1 * (oir + 2 * 2 / w) / 1000;
-    let va = (bih) * v2;
+    let va = ((dp - dd) / bih) * v2;
     let vr = wr / (pp * 1000);
     document.getElementById("hdeck").value = (vr - v1 - va) / ((Math.PI / 4) * (Math.pow((oor / 1000), 2))) * 1000;
     document.getElementById("v12").value = v1;
@@ -615,7 +668,7 @@ function showTab(n) {
     var x = document.getElementsByClassName("tab");
 
     for (let i = 0; i < x.length; i++) {
-        if(i===n){
+        if (i === n) {
             x[i].style.setProperty("display", "flex", "important");
         } else {
             x[i].style.setProperty("display", "none", "important");
