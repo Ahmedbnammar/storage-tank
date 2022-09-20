@@ -114,6 +114,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
+     * @param mixed $id
+     */
+    public function setPass(string $id): self
+    {
+        $this->password = $id;
+        return $this;
+    }
+
+    /**
      * @see UserInterface
      */
     public function eraseCredentials()
@@ -129,6 +138,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setRole(?string $role): self
     {
+
         $this->role = $role;
 
         return $this;
