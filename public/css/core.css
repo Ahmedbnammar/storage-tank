@@ -181,3 +181,7 @@ tr:nth-child(even) {
     width: 1rem;
     height: 1rem;
 }
+
+.modal.fade.show {
+    backdrop-filter: blur(50px);
+}
