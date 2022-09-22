@@ -208,7 +208,6 @@ function part4() {
 //let rll = parseFloat(document.getElementById("rll").value);
 //    let wp = parseFloat(document.getElementById("wp").value);
     let pod = parseFloat(document.getElementById("pod").value);
-    let slz = parseFloat(document.getElementById("slz").value);
     let pth = parseFloat(document.getElementById("pth").value);
 
 
@@ -254,99 +253,99 @@ function gData() {
 }
 
 function outerRim() {
-    var oor = document.getElementById("oor").value;
-    var tor = document.getElementById("tor").value;
-    var pplate = document.getElementById("pplate").value;
-    var hor = document.getElementById("hor").value;
+    let oor = document.getElementById("oor").value;
+    let tor = document.getElementById("tor").value;
+    let pplate = document.getElementById("pplate").value;
+    let hor = document.getElementById("hor").value;
     document.getElementById("orw").value = (Math.PI * ((oor * pplate * hor * tor))) / Math.pow(10, 9);
 }
 
 function innerRim() {
-    var hir = document.getElementById("hir").value;
-    var oir = document.getElementById("oir").value;
-    var pplate = document.getElementById("pplate").value;
-    var tir = document.getElementById("tir").value;
+    let hir = document.getElementById("hir").value;
+    let oir = document.getElementById("oir").value;
+    let pplate = document.getElementById("pplate").value;
+    let tir = document.getElementById("tir").value;
     document.getElementById("irw").value = (3.14159 * oir * pplate * tir * hir) / Math.pow(10, 9);
 }
 
 
 function bulkheads() {
-    var boh = parseFloat(document.getElementById("boh").value);
-    var bih = parseFloat(document.getElementById("bih").value);
-    var pplate = parseFloat(document.getElementById("pplate").value);
-    var wb = parseFloat(document.getElementById("wb").value);
-    var tb = parseFloat(document.getElementById("tb").value);
-    var n = parseFloat(document.getElementById("n").value);
+    let boh = parseFloat(document.getElementById("boh").value);
+    let bih = parseFloat(document.getElementById("bih").value);
+    let pplate = parseFloat(document.getElementById("pplate").value);
+    let wb = parseFloat(document.getElementById("wb").value);
+    let tb = parseFloat(document.getElementById("tb").value);
+    let n = parseFloat(document.getElementById("n").value);
     document.getElementById("bw").value = (1 / 2) * (boh + bih) * tb * wb * n * pplate / Math.pow(10, 9);
 
 }
 
 function deckPlate() {
-    var oir = parseFloat(document.getElementById("oir").value);
-    var td = parseFloat(document.getElementById("td").value);
-    var pplate = parseFloat(document.getElementById("pplate").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let td = parseFloat(document.getElementById("td").value);
+    let pplate = parseFloat(document.getElementById("pplate").value);
     document.getElementById("dpw").value = (Math.PI / 4) * (oir * oir) * td * pplate / Math.pow(10, 9);
 }
 
 function topPontoon() {
-    var oor = parseFloat(document.getElementById("oor").value);
-    var oir = parseFloat(document.getElementById("oir").value);
-    var pplate = parseFloat(document.getElementById("pplate").value);
-    var ttp = parseFloat(document.getElementById("ttp").value);
+    let oor = parseFloat(document.getElementById("oor").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let pplate = parseFloat(document.getElementById("pplate").value);
+    let ttp = parseFloat(document.getElementById("ttp").value);
     document.getElementById("tpw").value = ((3.14159 / 4) * ((oor * oor) - (oir * oir)) * pplate * ttp) / Math.pow(10, 9);
 
 }
 
 function bottomPontoon() {
-    var oor = parseFloat(document.getElementById("oor").value);
-    var oir = parseFloat(document.getElementById("oir").value);
-    var pplate = parseFloat(document.getElementById("pplate").value);
-    var tbp = parseFloat(document.getElementById("tbp").value);
+    let oor = parseFloat(document.getElementById("oor").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let pplate = parseFloat(document.getElementById("pplate").value);
+    let tbp = parseFloat(document.getElementById("tbp").value);
     document.getElementById("bpw").value = ((Math.PI / 4) * ((Math.pow(oor, 2)) - (Math.pow(oir, 2))) * pplate * tbp) / Math.pow(10, 9);
 }
 
 function pontoonLegs() {
-    var np = parseFloat(document.getElementById("np").value);
-    var pls = parseFloat(document.getElementById("plsw").value);
-    var pll = parseFloat(document.getElementById("pll").value);
+    let np = parseFloat(document.getElementById("np").value);
+    let pls = parseFloat(document.getElementById("plsw").value);
+    let pll = parseFloat(document.getElementById("pll").value);
     document.getElementById("plw").value = ((np * pls * pll) / 1000);
 
 }
 
 function pontoonLegsHousing() {
-    var np = parseFloat(document.getElementById("np").value);
-    var plh = parseFloat(document.getElementById("plhweight").value);
-    var plhl = parseFloat(document.getElementById("plhl").value);
+    let np = parseFloat(document.getElementById("np").value);
+    let plh = parseFloat(document.getElementById("plhweight").value);
+    let plhl = parseFloat(document.getElementById("plhl").value);
     document.getElementById("plhw").value = (np * plh * plhl) / 1000;
 
 }
 
 function deckLegs() {
-    var nd = parseFloat(document.getElementById("nd").value);
-    var plh = parseFloat(document.getElementById("DlsWeight").value);
-    var plhl = parseFloat(document.getElementById("dll").value);
+    let nd = parseFloat(document.getElementById("nd").value);
+    let plh = parseFloat(document.getElementById("DlsWeight").value);
+    let plhl = parseFloat(document.getElementById("dll").value);
     document.getElementById("dlw").value = (nd * plh * plhl) / 1000;
 
 }
 
 function deckLegsHousing() {
-    var np = document.getElementById("nd").value;
-    var plh = document.getElementById("DlhWeight").value;
-    var plhl = document.getElementById("dlhl").value;
+    let np = document.getElementById("nd").value;
+    let plh = document.getElementById("DlhWeight").value;
+    let plhl = document.getElementById("dlhl").value;
     document.getElementById("dlhw").value = (np * plh * plhl) / 1000;
 
 }
 
 function rafters() {
-    var w = document.getElementById("w").value;
-    var rf = document.getElementById("rf").value;
-    var rafterWeight = document.getElementById("rafterWeight").value;
+    let w = document.getElementById("w").value;
+    let rf = document.getElementById("rf").value;
+    let rafterWeight = document.getElementById("rafterWeight").value;
     document.getElementById("rw").value = w / 1000 * rf * rafterWeight;
-    var hor = parseFloat(document.getElementById("hor").value);
-    var hir = parseFloat(document.getElementById("hir").value);
-    var hext = parseFloat(document.getElementById("hext").value);
-    var postWeight = parseFloat(document.getElementById("postWeight").value);
-    var postNos = parseFloat(document.getElementById("pt").value);
+    let hor = parseFloat(document.getElementById("hor").value);
+    let hir = parseFloat(document.getElementById("hir").value);
+    let hext = parseFloat(document.getElementById("hext").value);
+    let postWeight = parseFloat(document.getElementById("postWeight").value);
+    let postNos = parseFloat(document.getElementById("pt").value);
 
     document.getElementById("pw").value = (((hir + hor - hext) / 2) / 1000) * postNos * postWeight;
 }
@@ -375,33 +374,33 @@ function wPontoon() {
 }
 
 function volume1() {
-    var h1 = parseFloat(document.getElementById("h1").value);
-    var oir = parseFloat(document.getElementById("oir").value);
-    var w = parseFloat(document.getElementById("w").value);
+    let h1 = parseFloat(document.getElementById("h1").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let w = parseFloat(document.getElementById("w").value);
     document.getElementById("v1").value = (Math.PI * 0.5 * h1 * 1.6 * ((oir + 2 * 2 / 3 * w) / 1000));
-    var h2 = parseFloat(document.getElementById("h2").value);
-    var oor = parseFloat(document.getElementById("oor").value);
+    let h2 = parseFloat(document.getElementById("h2").value);
+    let oor = parseFloat(document.getElementById("oor").value);
     document.getElementById("v2").value = Math.PI * h2 * 1.6 * (((oir + oor) / 2) / 1000);
 }
 
 
 function volume3() {
-    var h3 = parseFloat(document.getElementById("h3").value);
-    var oir = parseFloat(document.getElementById("oir").value);
-    var w = parseFloat(document.getElementById("w").value);
-    var v1 = parseFloat(document.getElementById("v1").value);
-    var v2 = parseFloat(document.getElementById("v2").value);
-    var v3 = (0.5 * h3 * 1.6 * ((oir + 2 * 2 / 3 * w) / 1000)) * Math.PI;
+    let h3 = parseFloat(document.getElementById("h3").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let w = parseFloat(document.getElementById("w").value);
+    let v1 = parseFloat(document.getElementById("v1").value);
+    let v2 = parseFloat(document.getElementById("v2").value);
+    let v3 = (0.5 * h3 * 1.6 * ((oir + 2 * 2 / 3 * w) / 1000)) * Math.PI;
     document.getElementById("v3").value = v3;
     document.getElementById("vol").value = v1 + v2 + v3;
 }
 
 function tdE() {
-    var wd = document.getElementById("wd").value;
-    var dpw = document.getElementById("dpw").value;
-    var td = document.getElementById("td").value;
-    var pplate = document.getElementById("pplate").value;
-    var pproduct = document.getElementById("pproduct").value;
+    let wd = document.getElementById("wd").value;
+    let dpw = document.getElementById("dpw").value;
+    let td = document.getElementById("td").value;
+    let pplate = document.getElementById("pplate").value;
+    let pproduct = document.getElementById("pproduct").value;
     document.getElementById("tde").value = (wd / dpw) * td;
     document.getElementById("dd").value = ((pplate / (pproduct * 1000))) * (wd / dpw) * td;
     operationFloatation();
@@ -470,22 +469,22 @@ function centreDeckStress() {
 }
 
 function noRainWater() {
-    var dd = parseFloat(document.getElementById("dd").value);
-    var wd = parseFloat(document.getElementById("wd").value);
-    var oir = parseFloat(document.getElementById("oir").value);
-    var rll = parseFloat(document.getElementById("rll").value);
-    var k2 = parseFloat(document.getElementById("k2").value);
-    var alpha = parseFloat(document.getElementById("alpha").value);
-    var e = parseFloat(document.getElementById("e").value);
-    var t = parseFloat(document.getElementById("t").value);
-    var k1 = parseFloat(document.getElementById("k1").value);
-    var k31 = parseFloat(document.getElementById("k31").value);
-    var k41 = parseFloat(document.getElementById("k41").value);
-    var k32 = parseFloat(document.getElementById("k32").value);
-    var k42 = parseFloat(document.getElementById("k42").value);
+    let dd = parseFloat(document.getElementById("dd").value);
+    let wd = parseFloat(document.getElementById("wd").value);
+    let oir = parseFloat(document.getElementById("oir").value);
+    let rll = parseFloat(document.getElementById("rll").value);
+    let k2 = parseFloat(document.getElementById("k2").value);
+    let alpha = parseFloat(document.getElementById("alpha").value);
+    let e = parseFloat(document.getElementById("e").value);
+    let t = parseFloat(document.getElementById("t").value);
+    let k1 = parseFloat(document.getElementById("k1").value);
+    let k31 = parseFloat(document.getElementById("k31").value);
+    let k41 = parseFloat(document.getElementById("k41").value);
+    let k32 = parseFloat(document.getElementById("k32").value);
+    let k42 = parseFloat(document.getElementById("k42").value);
 
-    var q1;
-    var pproduct = parseFloat(document.getElementById("pproduct").value);
+    let q1;
+    let pproduct = parseFloat(document.getElementById("pproduct").value);
     if (Math.abs(9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2)) > Math.abs(9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2) + rll / 1000)) {
         q1 = 9.8 * (wd - (3.14 / 4) * Math.pow(oir, 2) * dd * pproduct * 1000 / 1000000000) / (3.14 / 4) * Math.pow(oir, 2);
     } else {
@@ -493,7 +492,7 @@ function noRainWater() {
     }
     document.getElementById("q1").value = q1;
 
-    var y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q1 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
+    let y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q1 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
     document.getElementById("y1").value = y1;
     document.getElementById("otc1").value = (k31 * y1 / t + k41 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
     document.getElementById("obc1").value = k31 * y1 * e * t / Math.pow(alpha, 2);
@@ -511,7 +510,6 @@ function rainWater() {
     let hdeckr = parseFloat(document.getElementById("hdeckr").value);
     let pp = parseFloat(document.getElementById("pproduct").value);
     let wd = parseFloat(document.getElementById("wd").value);
-    let a = (oir) / 2;
     let adeck = (Math.PI / 4) * (Math.pow(oir, 2));
     let vrain = adeck * hrain / Math.pow(1000, 3);
     let wrain = vrain * 1000;
@@ -539,7 +537,7 @@ function rainWater() {
     let k42 = parseFloat(document.getElementById("k42").value);
 
 
-    var y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q2 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
+    let y1 = cubic((k2 / (Math.pow(t, 3))), 0, (k1 / t), ((q2 * Math.pow(alpha, 4)) / (e * Math.pow(t, 4))));
     document.getElementById("y2").value = y1;
     document.getElementById("otc2").value = (k31 * y1 / t + k41 * Math.pow(y1 / t, 2)) * (e * Math.pow(t, 2) / Math.pow(alpha, 2));
     document.getElementById("obc2").value = k31 * y1 * e * t / Math.pow(alpha, 2);
@@ -723,7 +721,7 @@ function operationFloatationLevel() {
 
 function showTab(n) {
     // This function will display the specified tab of the form...
-    var x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("tab");
 
     for (let i = 0; i < x.length; i++) {
         if (i === n) {
@@ -733,12 +731,12 @@ function showTab(n) {
         }
     }
     //... and fix the Previous/Next buttons:
-    if (n == 0) {
+    if (n === 0) {
         document.getElementById("prevBtn").style.display = "none";
     } else {
         document.getElementById("prevBtn").style.display = "inline";
     }
-    if (n == (x.length - 1)) {
+    if (n === (x.length - 1)) {
         document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
         document.getElementById("nextBtn").innerHTML = "Next";
@@ -749,9 +747,9 @@ function showTab(n) {
 
 function nextPrev(n) {
     // This function will figure out which tab to display
-    var x = document.getElementsByClassName("tab");
+    let x = document.getElementsByClassName("tab");
     // Exit the function if any field in the current tab is invalid:
-    if (n == 1 && !validateForm()) return false;
+    if (n === 1 && !validateForm()) return false;
     // Hide the current tab:
     x[currentTab].style.display = "none";
     // Increase or decrease the current tab by 1:
@@ -768,13 +766,13 @@ function nextPrev(n) {
 
 function validateForm() {
     // This function deals with validation of the form fields
-    var x, y, i, valid = true;
+    let x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
-        if (y[i].value == "") {
+        if (y[i].value === "") {
             // add an "invalid" class to the field:
             y[i].className += " invalid";
             // and set the current valid status to false
@@ -789,11 +787,11 @@ function validateForm() {
 }
 
 function cubic(a, b, c, d) {
-    var pi, q, del;
+    let pi, q, del;
     pi = Math.PI;
     e = Math.E;
 
-    var x = [];
+    let x = [];
 
 
     for (k = 0; k <= 2; k++) {
@@ -873,7 +871,7 @@ function cubic(a, b, c, d) {
 
 function fixStepIndicator(n) {
     // This function removes the "active" class of all steps...
-    var i, x = document.getElementsByClassName("step");
+    let i, x = document.getElementsByClassName("step");
     for (i = 0; i < x.length; i++) {
         x[i].className = x[i].className.replace(" active", "");
     }
@@ -882,9 +880,8 @@ function fixStepIndicator(n) {
 }
 
 $(function () {
-    var str = '#len'; //increment by 1 up to 1-nelemnts
     $(document).ready(function () {
-        var i, stop;
+        let i, stop;
         i = 1;
         stop = 4; //num elements
         setInterval(function () {
