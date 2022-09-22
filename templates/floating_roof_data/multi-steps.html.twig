@@ -188,22 +188,21 @@
         window.jsPDF = window.jspdf.jsPDF;
     });
 
-    const pageWidth = 210;
-    const pageHeight = 297;
     const marginX = 10;
     const marginY = 10;
-
-    const imageWidth = pageWidth - marginX * 2;
-
 
     document.getElementById("toPdf").onclick = async () => {
 
         $("#loadingModal").modal("show");
+        const firstTab = document.querySelector(".tab[style*='flex']");
+        const tabWidth = firstTab.offsetWidth;
+        const tabHeight = firstTab.offsetHeight;
+        const imageWidth = tabWidth - marginX * 2;
 
         const doc = new jsPDF({
-            orientation: 'p',
-            unit: 'mm',
-            format: [pageWidth, pageHeight],
+            orientation: 'l',
+            unit: 'in',
+            format: [(tabWidth + 2 * marginX) / 72, (tabHeight + 2 * marginY) / 72],
             margin: [marginX, marginY, marginX, marginY]
         });
 
@@ -221,13 +220,23 @@
             // adjust image height to image width keeping aspect ratio
             let imageHeight = imageWidth * canvas.height / canvas.width;
 
-            doc.addImage(imgData, 'PNG', marginX, marginY, imageWidth, imageHeight);
-            doc.addPage();
+            doc.addImage(imgData, 'PNG', marginX / 72, marginY / 72, imageWidth / 72, imageHeight / 72);
+            if(i < divs.length - 1) {
+                doc.addPage();
+            }
         }
         // hide the loader
         $("#loadingModal").modal("hide");
         await doc.save('test.pdf');
     }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("input").each(function () {
+            $(this).val("1");
+        });
+    });
 </script>
 
 <script>
