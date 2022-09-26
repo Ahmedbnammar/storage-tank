@@ -1,29 +1,45 @@
+<div class="d-flex gap-2">
+    <h2>PONTOON MATERIAL PROPERTIES</h2>
+    <i class="fa fa-question-circle-o"></i>
+    <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
+            data-bs-toggle="modal"
+            data-bs-target="#fig8Modal">
+        <img src="{{ asset('images/question-mark.svg') }}" alt="fig8" width="20" height="20">
+    </button>
+</div>
+{% include "/form-fragments/help-picture.fragment.html.twig" with {
+    "modalId": "fig8Modal",
+    "imageSrc": asset('images/8.png'),
+} %}
 
-<h1>ROOF SUPPORT LEG DESIGN</h1>
-<label for="slz">Support leg size,slz</label><br/>
-<p><input id="slz" name="slz" placeholder="Support leg size,slz"/></p>
-<label for="pod">Pipe outside diameter,pod</label><br/>
-<p><input id="pod" name="pod" /></p>
-<label for="pth">Pipe Thickness,Pth</label><br/>
-<p><input id="pth" onchange="part4()" /></p>
-<label for="pid">Pipe inside diameter,pid</label><br/>
-<p><input id="pid" readonly /></p>
-<label for="aleg">Pipe area,Aleg</label><br/>
-<p><input id="aleg" readonly/></p>
-<label for="rg">Radius of gyration,r</label><br/>
-<p><input id="rg" readonly/></p>
-<label for="materialOfConstruction2">Meterial of construction</label><br/>
-<p>
-    <select class="active" id="materialOfConstruction2" name="materialOfConstruction" onchange="materialValues2()">
-        <option style="align-self: center" value="A283M Gr C">Select a Material</option>
-        <option value="A283M Gr C">A283M Gr C</option>
-        <option value="A285M Gr C">A285M Gr C</option>
-    </select>
-</p>
-<label for="specificMinimumYieldStress2"> Specific minimum Yield Stress,Sy </label><br/>
-<p><input id="specificMinimumYieldStress2" name="specificMinimumYieldStress" placeholder="specificMinimumYieldStress..."
-          readonly=""/></p>
-<label for="modulusOfElasticity2">Modulus of Elasticity </label><br/>
-<p><input id="modulusOfElasticity2" name="modulusOfElasticity" placeholder="modulusOfElasticity" readonly=""/></p>
-<label for="pplate2">Density of Material,ρ(plate) </label><br/>
-<p><input id="pplate2" name="densityOfMaterial" placeholder="densityOfMaterial" readonly=""/></p>
+<h2 style="color: #818cf8">Effective radius for area of deck supported by leg</h2>
+<label for="reff1" id="reff01">R1eff</label><br/>
+<p><input id="reff1"/></p>
+<label for="reff2" id="reff02">R2eff</label><br/>
+<p><input id="reff2"/></p>
+<label for="reff3" id="reff03">R3eff</label><br/>
+<p><input id="reff3"/></p>
+<label for="reff4" id="reff04">R4eff</label><br/>
+<p><input id="reff4"/></p>
+<label for="reff5" id="reff05">R5eff</label><br/>
+<p><input id="reff5"/></p>
+<label for="reff6" id="reff06">R6eff</label><br/>
+<p><input id="reff6"/></p>
+<label for="reff7" id="reff07">R7eff</label><br/>
+<p><input id="reff7"/></p>
+<label for="reff8" id="reff08">R8eff</label><br/>
+<p><input id="reff8"/></p>
+<label for="reff9" id="reff09">R9eff</label><br/>
+<p><input id="reff9"/></p>
+<label for="reff10" id="reff010">R10eff</label><br/>
+<p><input id="reff10"/></p>
+<label for="reff11" id="reff011">R11eff</label><br/>
+<p><input id="reff11"/></p>
+<label for="reff12" id="reff012">R12eff</label><br/>
+<p><input id="reff12"/></p>
+<label for="reff13" id="reff013">R13eff</label><br/>
+<p><input id="reff13"/></p>
+<label for="reff14" id="reff014">R14eff</label><br/>
+<p><input id="reff14"/></p>
+<label for="reff15" id="reff015">R15eff</label><br/>
+<p><input id="reff15"/></p>

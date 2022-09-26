@@ -1,65 +1,49 @@
-<div class="d-flex gap-2">
-    <h2>PONTOON MATERIAL PROPERTIES</h2>
-    <i class="fa fa-question-circle-o"></i>
-    <button type="button" class="btn btn-outline-success rounded-circle pb-0 pt-0 d-inline-flex align-items-center"
-            data-bs-toggle="modal"
-            data-bs-target="#fig7Modal">
-        <img src="{{ asset('images/question-mark.svg') }}" alt="fig7" width="20" height="20">
-    </button>
-</div>
-{% include "/form-fragments/help-picture.fragment.html.twig" with {
-    "modalId": "fig7Modal",
-    "imageSrc": asset('images/7.png'),
-} %}
 
-
-<label for="noa">Number of areas</label><br/>
-<select class="active" id="noa" name="noa" onchange="numberOfAreas()" style="--amber-200: black;width: 350px;">
-<option style="align-self: center">Select the number of areas</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">12</option>
-<option value="14">14</option>
-<option value="15">15</option>
-</select>
-<br/>
-
-<h2 style="color: #818cf8">Leg Radius Ri</h2>
-<label for="1" id="01">R1</label><br/>
-<p><input id="1"/></p>
-<label for="2" id="02">R2</label><br/>
-<p><input id="2"/></p>
-<label for="3" id="03">R3</label><br/>
-<p><input id="3"/></p>
-<label for="4" id="04">R4</label><br/>
-<p><input id="4"/></p>
-<label for="5" id="05">R5</label><br/>
-<p><input id="5"/></p>
-<label for="6" id="06">R6</label><br/>
-<p><input id="6"/></p>
-<label for="7" id="07">R7</label><br/>
-<p><input id="7"/></p>
-<label for="8" id="08">R8</label><br/>
-<p><input id="8"/></p>
-<label for="9" id="09">R9</label><br/>
-<p><input id="9"/></p>
-<label for="10" id="010">R10</label><br/>
-<p><input id="10"/></p>
-<label for="11" id="011">R11</label><br/>
-<p><input id="11"/></p>
-<label for="12" id="012">R12</label><br/>
-<p><input id="12"/></p>
-<label for="13" id="013">R13</label><br/>
-<p><input id="13"/></p>
-<label for="14" id="014">R14</label><br/>
-<p><input id="14"/></p>
-<label for="15" id="015">R15</label><br/>
-<p><input id="15"/></p>
+<h2>PONTOON RESULT</h2>
+<table>
+<tr>
+<th>Ring stability check</th>
+<th>Mid-Point</th>
+<th>Load-Point</th>
+</tr>
+<tr>
+<td>Bending moment (N.mm)</td>
+<td><input id="c11"/></td>
+<td><input id="c12"/></td>
+</tr>
+<tr>
+<td>Circumferential force (N)</td>
+<td><input id="c21"/></td>
+<td><input id="c22"/></td>
+</tr>
+<tr>
+<td>Bending stress (N/mm^2)</td>
+<td><input id="c31"/></td>
+<td><input id="c32"/></td>
+</tr>
+<tr>
+<td>Circumferential stress (N/mm^2)</td>
+<td><input id="c41"/></td>
+<td><input id="c42"/></td>
+</tr>
+<tr>
+<td>Allow. Bending stress (N/mm^2)</td>
+<td><input id="c51"/></td>
+<td><input id="c52"/></td>
+</tr>
+<tr>
+<td>Allow. Axial stress (N/mm^2)</td>
+<td><input id="c61"/></td>
+<td><input id="c62"/></td>
+</tr>
+<tr>
+<td>Unity Check</td>
+<td><input id="c71"/></td>
+<td><input id="c72"/></td>
+</tr>
+<tr>
+<td>Condition</td>
+<td><input id="c81"/></td>
+<td><input id="c82"/></td>
+</tr>
+</table>
