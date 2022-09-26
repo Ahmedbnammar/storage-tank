@@ -47,7 +47,7 @@
         <div class="card-body">{% include "form-fragments/child_3.html.twig" %}</div>
       </div>
     </div>
-    {# <div class="tab d-flex gap-3 form-group">
+    <div class="tab d-flex gap-3 form-group">
             <div class="card bg-shadow col-6">
                 <div class="card-body">{% include "form-fragments/child_4.html.twig" %}</div>
             </div>
@@ -152,13 +152,13 @@
         <div class="card-body" >{% include "form-fragments/child_29.html.twig" %}</div>
       </div>
 
-    </div> #}
+    </div>
     <div class="tab d-flex gap-3 form-group">
       <div class="card bg-shadow col-6">
         <div class="card-body" data-image="fig15.png">{% include "form-fragments/child_30.html.twig" %}</div>
       </div>
       <div>
-        <button type="submit" id="toPdf" name="toPdf">Export</button>
+        <button type="button" id="toPdf" name="toPdf">Export</button>
       </div>
     </div>
 
@@ -191,24 +191,32 @@
 
         $("#loadingModal").modal("show");
         // loop through all divs with the class card-body
-        let inputMap = {}
+        let data = []
         $('.card-body').each(function () {
             // get the text of the first h2
             let title = $(this).find('h2').first().text();
+            let image = $(this).data('image');
 
             // loop through all the input fields and get their labels and values
             let inputs = $(this).find('input');
-            let map = [];
+            let labelsInputsMap = [];
             inputs.each(function () {
-                map.push({label: $("label[for='" + $(this).attr('id') + "']")[0].innerText, value: $(this).val()});
+                labelsInputsMap.push({
+                    label: $("label[for='" + $(this).attr('id') + "']")[0].innerText,
+                    value: $(this).val()
+                });
             });
-            inputMap[title] = map;
+            data.push({
+                title: title,
+                image: image,
+                inputs: labelsInputsMap
+            });
         });
         // submit map via ajax
         $.ajax({
             url: "{{ path('make_report') }}",
             type: "POST",
-            data: JSON.stringify(inputMap),
+            data: JSON.stringify(data),
             contentType: "application/json",
             success: function (data) {
                 $("#loadingModal").modal("hide");
@@ -216,7 +224,6 @@
             },
             error: function (data) {
                 $("#loadingModal").modal("hide");
-                alert("Something went wrong");
             }
         });
         /*
