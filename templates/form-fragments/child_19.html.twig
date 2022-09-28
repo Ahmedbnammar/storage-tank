@@ -1,29 +1,99 @@
 
-<h1>ROOF SUPPORT LEG DESIGN</h1>
-<label for="slz">Support leg size,slz</label><br/>
-<p><input id="slz" name="slz" placeholder="Support leg size,slz"/></p>
-<label for="pod">Pipe outside diameter,pod</label><br/>
-<p><input id="pod" name="pod" /></p>
-<label for="pth">Pipe Thickness,Pth</label><br/>
-<p><input id="pth" onchange="part4()" /></p>
-<label for="pid">Pipe inside diameter,pid</label><br/>
-<p><input id="pid" readonly /></p>
-<label for="aleg">Pipe area,Aleg</label><br/>
-<p><input id="aleg" readonly/></p>
-<label for="rg">Radius of gyration,r</label><br/>
-<p><input id="rg" /></p>
-<label for="materialOfConstruction2">Meterial of construction</label><br/>
-<p>
-    <select class="active" id="materialOfConstruction2" name="materialOfConstruction" onchange="materialValues2()">
-        <option style="align-self: center" value="A283M Gr C">Select a Material</option>
-        <option value="A283M Gr C">A283M Gr C</option>
-        <option value="A285M Gr C">A285M Gr C</option>
-    </select>
-</p>
-<label for="specificMinimumYieldStress2"> Specific minimum Yield Stress,Sy </label><br/>
-<p><input id="specificMinimumYieldStress2" name="specificMinimumYieldStress" placeholder="specificMinimumYieldStress..."
-          readonly=""/></p>
-<label for="modulusOfElasticity2">Modulus of Elasticity </label><br/>
-<p><input id="modulusOfElasticity2" name="modulusOfElasticity" placeholder="modulusOfElasticity" readonly=""/></p>
-<label for="pplate2">Density of Material,ρ(plate) </label><br/>
-<p><input id="pplate2" name="densityOfMaterial" placeholder="densityOfMaterial" readonly=""/></p>
+<h2>PONTOON RESULT</h2>
+<table>
+    <tr>
+        <th>Ring stability check</th>
+        <th>Mid-Point</th>
+        <th>Load-Point</th>
+    </tr>
+    <tr>
+        <td>Bending moment (N.mm)</td>
+        <td><input id="c11"/></td>
+        <td><input id="c12"/></td>
+    </tr>
+    <tr>
+        <td>Circumferential force (N)</td>
+        <td><input id="c21"/></td>
+        <td><input id="c22"/></td>
+    </tr>
+    <tr>
+        <td>Bending stress (N/mm^2)</td>
+        <td><input id="c31"/></td>
+        <td><input id="c32"/></td>
+    </tr>
+    <tr>
+        <td>Circumferential stress (N/mm^2)</td>
+        <td><input id="c41"/></td>
+        <td><input id="c42"/></td>
+    </tr>
+    <tr>
+        <td>Allow. Bending stress (N/mm^2)</td>
+        <td><input id="c51"/></td>
+        <td><input id="c52"/></td>
+    </tr>
+    <tr>
+        <td>Allow. Axial stress (N/mm^2)</td>
+        <td><input id="c61"/></td>
+        <td><input id="c62"/></td>
+    </tr>
+    <tr>
+        <td>Unity Check</td>
+        <td><input id="c71"/></td>
+        <td><input id="c72"/></td>
+    </tr>
+    <tr>
+        <td>Condition</td>
+        <td><input id="c81"/></td>
+        <td><input id="c82"/></td>
+    </tr>
+</table>
+
+
+<h2>PONTOON RESULT</h2>
+<table>
+    <tr>
+        <th>Ring stability check</th>
+        <th>Mid-Point</th>
+        <th>Load-Point</th>
+    </tr>
+    <tr>
+        <td>Bending moment (N.mm)</td>
+        <td><input id="e11"/></td>
+        <td><input id="e12"/></td>
+    </tr>
+    <tr>
+        <td>Circumferential force (N)</td>
+        <td><input id="e21"/></td>
+        <td><input id="e22"/></td>
+    </tr>
+    <tr>
+        <td>Bending stress (N/mm^2)</td>
+        <td><input id="e31"/></td>
+        <td><input id="e32"/></td>
+    </tr>
+    <tr>
+        <td>Circumferential stress (N/mm^2)</td>
+        <td><input id="e41"/></td>
+        <td><input id="e42"/></td>
+    </tr>
+    <tr>
+        <td>Allow. Bending stress (N/mm^2)</td>
+        <td><input id="e51"/></td>
+        <td><input id="e52"/></td>
+    </tr>
+    <tr>
+        <td>Allow. Axial stress (N/mm^2)</td>
+        <td><input id="e61"/></td>
+        <td><input id="e62"/></td>
+    </tr>
+    <tr>
+        <td>Unity Check</td>
+        <td><input id="e71"/></td>
+        <td><input id="e72"/></td>
+    </tr>
+    <tr>
+        <td>Condition</td>
+        <td><input id="e81"/></td>
+        <td><input id="e82"/></td>
+    </tr>
+</table>
