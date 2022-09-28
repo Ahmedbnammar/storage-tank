@@ -75,6 +75,18 @@
           <div class="col-5 card">
             <div class="card-body">
               <h5 class="card-title">{{ dataset.title }}</h5>
+
+              {% if dataset.isTable is defined %}
+                <table class="table table-striped" >
+                  {% for row in dataset.data %}
+                    <tr>
+                      {% for cell in row %}
+                        <td>{{ cell }}</td>
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </table>
+              {% else  %}
               <div class="card-text">
                 <ul>
                   {% for item in dataset.inputs %}
@@ -82,6 +94,7 @@
                   {% endfor %}
                 </ul>
               </div>
+                {% endif %}
             </div>
             {% if dataset.image is defined %}
 
