@@ -30,14 +30,12 @@ class PdfGenerationController extends AbstractController
         $renderedView = $this->renderView('report.html.twig', [
             'chunks' => $chunks,
         ]);
-        try {
-            $knpSnappyPdf->generateFromHtml(
-                $renderedView,
-                $outdir . $file_name
-            );
-        } catch (\Exception $e) {
-            var_dump($e);
-        }
+
+        $knpSnappyPdf->setTimeout(300);
+        $knpSnappyPdf->generateFromHtml(
+            $renderedView,
+            $outdir . $file_name
+        );
         return new JsonResponse(["file_name" => $file_name]);
     }
 }
