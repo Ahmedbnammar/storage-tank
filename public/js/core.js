@@ -12,6 +12,245 @@ function materialValues() {
         document.getElementById("modulusOfElasticity").value = 190000;
         document.getElementById("pplate").value = 7800;
     }
+    if (x === "A131M  A") {
+        document.getElementById("specificMinimumYieldStress").value = 235;
+        document.getElementById("modulusOfElasticity").value = 454000;
+        document.getElementById("pplate").value = 7800;
+    }
+    if (x === "A131M B") {
+        document.getElementById("specificMinimumYieldStress").value = 235  ;
+        document.getElementById("modulusOfElasticity").value = 197000;
+        document.getElementById("pplate").value = 7800;
+    }
+    if (x === "A36M") {
+        document.getElementById("specificMinimumYieldStress").value = 250;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7850;
+    }
+    if (x === "A131M Gr EH36") {
+        document.getElementById("specificMinimumYieldStress").value = 360;
+        document.getElementById("modulusOfElasticity").value = 160000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A573M Gr 400") {
+        document.getElementById("specificMinimumYieldStress").value = 205;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A285M Gr C") {
+        document.getElementById("specificMinimumYieldStress").value = 220;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7700;
+    }
+    if (x === "A573M Gr 450") {
+        document.getElementById("specificMinimumYieldStress").value = 240;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7700;
+    }if (x === "A573M Gr 485") {
+        document.getElementById("specificMinimumYieldStress").value = 290;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7700;
+    }if (x === "A516M Gr 380") {
+        document.getElementById("specificMinimumYieldStress").value = 205;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A516M Gr 415") {
+        document.getElementById("specificMinimumYieldStress").value = 220;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A516M Gr 450") {
+        document.getElementById("specificMinimumYieldStress").value = 240;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A516M Gr  485") {
+        document.getElementById("specificMinimumYieldStress").value = 260;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A662M Gr B") {
+        document.getElementById("specificMinimumYieldStress").value = 275;
+        document.getElementById("modulusOfElasticity").value = 175000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A662M Gr C") {
+        document.getElementById("specificMinimumYieldStress").value = 295;
+        document.getElementById("modulusOfElasticity").value = 241000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A537M Gr 1") {
+        document.getElementById("specificMinimumYieldStress").value = 345;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A537M Gr 2") {
+        document.getElementById("specificMinimumYieldStress").value = 380;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A633M Gr C") {
+        document.getElementById("specificMinimumYieldStress").value = 315;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A633M Gr D") {
+        document.getElementById("specificMinimumYieldStress").value = 315;
+        document.getElementById("modulusOfElasticity").value = 205000;
+        document.getElementById("pplate").value = 7800;
+    }
+    if (x === "A737M Gr B ") {
+        document.getElementById("specificMinimumYieldStress").value = 345;
+        document.getElementById("modulusOfElasticity").value = 205000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A841M Classe 1 Gr A") {
+        document.getElementById("specificMinimumYieldStress").value = 345;
+        document.getElementById("modulusOfElasticity").value = 220000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A841M Classe 1 Gr B") {
+        document.getElementById("specificMinimumYieldStress").value = 345;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A841M Classe 2 Gr A") {
+        document.getElementById("specificMinimumYieldStress").value = 415;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "A841M Classe 2 Gr B") {
+        document.getElementById("specificMinimumYieldStress").value = 415;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 260W") {
+        document.getElementById("specificMinimumYieldStress").value = 260;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 260WT") {
+        document.getElementById("specificMinimumYieldStress").value = 260;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 300W") {
+        document.getElementById("specificMinimumYieldStress").value = 300;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 300WT") {
+        document.getElementById("specificMinimumYieldStress").value = 300;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 350W") {
+        document.getElementById("specificMinimumYieldStress").value = 350;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "G40.21M 350WT") {
+        document.getElementById("specificMinimumYieldStress").value = 320;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "NS 235") {
+        document.getElementById("specificMinimumYieldStress").value = 235;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "NS 250") {
+        document.getElementById("specificMinimumYieldStress").value = 250;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "NS 275") {
+        document.getElementById("specificMinimumYieldStress").value = 275;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "ISO 630 S275 C") {
+        document.getElementById("specificMinimumYieldStress").value = 265;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7750;
+    }if (x === "ISO 630 S275 D") {
+        document.getElementById("specificMinimumYieldStress").value = 265;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7750;
+    }if (x === "ISO 630 S355 C") {
+        document.getElementById("specificMinimumYieldStress").value = 335;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7750;
+    }if (x === "ISO 630 S355 D") {
+        document.getElementById("specificMinimumYieldStress").value = 335;
+        document.getElementById("modulusOfElasticity").value = 190000;
+        document.getElementById("pplate").value = 7750;
+    }if (x === "EN 10025 S275 J0") {
+        document.getElementById("specificMinimumYieldStress").value = 265;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7850;
+    }if (x === "EN 10025 S275 J2") {
+        document.getElementById("specificMinimumYieldStress").value = 265;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7850;
+    }if (x === "EN 10025 S355 J0") {
+        document.getElementById("specificMinimumYieldStress").value = 335;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7850;
+    }if (x === "EN 10025 S355 J2") {
+        document.getElementById("specificMinimumYieldStress").value = 335;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7850;
+    }if (x === "EN 10025 S355 K2") {
+        document.getElementById("specificMinimumYieldStress").value = 335;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7850;
+    }if (x === "ASTM A27M 60-30") {
+        document.getElementById("specificMinimumYieldStress").value = 207;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "ASTM A27M 65-35") {
+        document.getElementById("specificMinimumYieldStress").value = 242;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "Astm A216M WCB") {
+        document.getElementById("specificMinimumYieldStress").value = 485;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "Astm A216M WCC") {
+        document.getElementById("specificMinimumYieldStress").value = 500;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "Astm A216M WCA") {
+        document.getElementById("specificMinimumYieldStress").value = 500;
+        document.getElementById("modulusOfElasticity").value = 210000;
+        document.getElementById("pplate").value = 7800;
+    }if (x === "ASTM A240M 304") {
+        document.getElementById("specificMinimumYieldStress").value = 207;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 8000;
+    }if (x === "ASTM A240M 316L") {
+        document.getElementById("specificMinimumYieldStress").value = 207;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 8000;
+    }if (x === "ASTM A240M 321") {
+        document.getElementById("specificMinimumYieldStress").value = 207;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 8027;
+    }if (x === "ASTM A240M 904L") {
+        document.getElementById("specificMinimumYieldStress").value = 214;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 7900;
+    }
+    if (x === "ASTM A240M UNS S31254") {
+        document.getElementById("specificMinimumYieldStress").value = 310;
+        document.getElementById("modulusOfElasticity").value = 200000;
+        document.getElementById("pplate").value = 8000;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 function materialValues2() {
@@ -26,6 +265,220 @@ function materialValues2() {
         document.getElementById("modulusOfElasticity2").value = 190000;
         document.getElementById("pplate2").value = 7800;
     }
+    if (x === "A131M  A") {
+        document.getElementById("specificMinimumYieldStress2").value = 235;
+        document.getElementById("modulusOfElasticity2").value = 454000;
+        document.getElementById("pplate2").value = 7800;
+    }
+    if (x === "A131M B") {
+        document.getElementById("specificMinimumYieldStress2").value = 235  ;
+        document.getElementById("modulusOfElasticity2").value = 197000;
+        document.getElementById("pplate2").value = 7800;
+    }
+    if (x === "A36M") {
+        document.getElementById("specificMinimumYieldStress2").value = 250;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7850;
+    }
+    if (x === "A131M Gr EH36") {
+        document.getElementById("specificMinimumYieldStress2").value = 360;
+        document.getElementById("modulusOfElasticity2").value = 160000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A573M Gr 400") {
+        document.getElementById("specificMinimumYieldStress2").value = 205;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A285M Gr C") {
+        document.getElementById("specificMinimumYieldStress2").value = 220;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7700;
+    }
+    if (x === "A573M Gr 450") {
+        document.getElementById("specificMinimumYieldStress2").value = 240;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7700;
+    }if (x === "A573M Gr 485") {
+        document.getElementById("specificMinimumYieldStress2").value = 290;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7700;
+    }if (x === "A516M Gr 380") {
+        document.getElementById("specificMinimumYieldStress2").value = 205;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A516M Gr 415") {
+        document.getElementById("specificMinimumYieldStress2").value = 220;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A516M Gr 450") {
+        document.getElementById("specificMinimumYieldStress2").value = 240;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A516M Gr  485") {
+        document.getElementById("specificMinimumYieldStress2").value = 260;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A662M Gr B") {
+        document.getElementById("specificMinimumYieldStress2").value = 275;
+        document.getElementById("modulusOfElasticity2").value = 175000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A662M Gr C") {
+        document.getElementById("specificMinimumYieldStress2").value = 295;
+        document.getElementById("modulusOfElasticity2").value = 241000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A537M Gr 1") {
+        document.getElementById("specificMinimumYieldStress2").value = 345;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A537M Gr 2") {
+        document.getElementById("specificMinimumYieldStress2").value = 380;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A633M Gr C") {
+        document.getElementById("specificMinimumYieldStress2").value = 315;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A633M Gr D") {
+        document.getElementById("specificMinimumYieldStress2").value = 315;
+        document.getElementById("modulusOfElasticity2").value = 205000;
+        document.getElementById("pplate2").value = 7800;
+    }
+    if (x === "A737M Gr B ") {
+        document.getElementById("specificMinimumYieldStress2").value = 345;
+        document.getElementById("modulusOfElasticity2").value = 205000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A841M Classe 1 Gr A") {
+        document.getElementById("specificMinimumYieldStress2").value = 345;
+        document.getElementById("modulusOfElasticity2").value = 220000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A841M Classe 1 Gr B") {
+        document.getElementById("specificMinimumYieldStress2").value = 345;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A841M Classe 2 Gr A") {
+        document.getElementById("specificMinimumYieldStress2").value = 415;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "A841M Classe 2 Gr B") {
+        document.getElementById("specificMinimumYieldStress2").value = 415;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 260W") {
+        document.getElementById("specificMinimumYieldStress2").value = 260;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 260WT") {
+        document.getElementById("specificMinimumYieldStress2").value = 260;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 300W") {
+        document.getElementById("specificMinimumYieldStress2").value = 300;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 300WT") {
+        document.getElementById("specificMinimumYieldStress2").value = 300;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 350W") {
+        document.getElementById("specificMinimumYieldStress2").value = 350;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "G40.21M 350WT") {
+        document.getElementById("specificMinimumYieldStress2").value = 320;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "NS 235") {
+        document.getElementById("specificMinimumYieldStress2").value = 235;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "NS 250") {
+        document.getElementById("specificMinimumYieldStress2").value = 250;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "NS 275") {
+        document.getElementById("specificMinimumYieldStress2").value = 275;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "ISO 630 S275 C") {
+        document.getElementById("specificMinimumYieldStress2").value = 265;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7750;
+    }if (x === "ISO 630 S275 D") {
+        document.getElementById("specificMinimumYieldStress2").value = 265;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7750;
+    }if (x === "ISO 630 S355 C") {
+        document.getElementById("specificMinimumYieldStress2").value = 335;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7750;
+    }if (x === "ISO 630 S355 D") {
+        document.getElementById("specificMinimumYieldStress2").value = 335;
+        document.getElementById("modulusOfElasticity2").value = 190000;
+        document.getElementById("pplate2").value = 7750;
+    }if (x === "EN 10025 S275 J0") {
+        document.getElementById("specificMinimumYieldStress2").value = 265;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7850;
+    }if (x === "EN 10025 S275 J2") {
+        document.getElementById("specificMinimumYieldStress2").value = 265;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7850;
+    }if (x === "EN 10025 S355 J0") {
+        document.getElementById("specificMinimumYieldStress2").value = 335;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7850;
+    }if (x === "EN 10025 S355 J2") {
+        document.getElementById("specificMinimumYieldStress2").value = 335;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7850;
+    }if (x === "EN 10025 S355 K2") {
+        document.getElementById("specificMinimumYieldStress2").value = 335;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7850;
+    }if (x === "ASTM A27M 60-30") {
+        document.getElementById("specificMinimumYieldStress2").value = 207;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "ASTM A27M 65-35") {
+        document.getElementById("specificMinimumYieldStress2").value = 242;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "Astm A216M WCB") {
+        document.getElementById("specificMinimumYieldStress2").value = 485;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "Astm A216M WCC") {
+        document.getElementById("specificMinimumYieldStress2").value = 500;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "Astm A216M WCA") {
+        document.getElementById("specificMinimumYieldStress2").value = 500;
+        document.getElementById("modulusOfElasticity2").value = 210000;
+        document.getElementById("pplate2").value = 7800;
+    }if (x === "ASTM A240M 304") {
+        document.getElementById("specificMinimumYieldStress2").value = 207;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 8000;
+    }if (x === "ASTM A240M 316L") {
+        document.getElementById("specificMinimumYieldStress2").value = 207;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 8000;
+    }if (x === "ASTM A240M 321") {
+        document.getElementById("specificMinimumYieldStress2").value = 207;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 8027;
+    }if (x === "ASTM A240M 904L") {
+        document.getElementById("specificMinimumYieldStress2").value = 214;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 7900;
+    }
+    if (x === "ASTM A240M UNS S31254") {
+        document.getElementById("specificMinimumYieldStress2").value = 310;
+        document.getElementById("modulusOfElasticity2").value = 200000;
+        document.getElementById("pplate2").value = 8000;
+    }
+
+
+
 }
 
 function hide1() {
@@ -89,46 +542,52 @@ function numberOfAreas() {
         document.getElementById("p" + x).value = "";
         document.getElementById("p" + x).style.display = "block";
         document.getElementById("p0" + x).style.display = "block";
+        document.getElementById("as" + x).value = "";
+        document.getElementById("as" + x).style.display = "block";
+        document.getElementById("as0" + x).style.display = "block";
 
     }
     for (let i = 15; i > n; i--) {
         x = i.toString();
-        document.getElementById(x).value = 0;
+        document.getElementById(x).value = "Undefined";
         document.getElementById(x).style.display = "none";
         document.getElementById("0" + x).style.display = "none";
 
-        document.getElementById("rnos" + x).value = 0;
+        document.getElementById("rnos" + x).value = "Undefined";
         document.getElementById("rnos" + x).style.display = "none";
         document.getElementById("r0" + x).style.display = "none";
 
-        document.getElementById("lsp" + x).value = 0;
+        document.getElementById("lsp" + x).value = "Undefined";
         document.getElementById("lsp" + x).style.display = "none";
         document.getElementById("lsp0" + x).style.display = "none";
 
-        document.getElementById("reff" + x).value = 0;
+        document.getElementById("reff" + x).value = "Undefined";
         document.getElementById("reff" + x).style.display = "none";
         document.getElementById("reff0" + x).style.display = "none";
 
-        document.getElementById("aeff" + x).value = 0;
+        document.getElementById("aeff" + x).value = "Undefined";
         document.getElementById("aeff" + x).style.display = "none";
         document.getElementById("aeff0" + x).style.display = "none";
-        document.getElementById("aieff" + x).value = 0;
+        document.getElementById("aieff" + x).value = "Undefined";
         document.getElementById("aieff" + x).style.display = "none";
         document.getElementById("aieff0" + x).style.display = "none";
 
-        document.getElementById("dl" + x).value = 0;
+        document.getElementById("dl" + x).value = "Undefined";
         document.getElementById("dl" + x).style.display = "none";
         document.getElementById("dl0" + x).style.display = "none";
-        document.getElementById("ll" + x).value = 0;
+        document.getElementById("ll" + x).value = "Undefined";
         document.getElementById("ll" + x).style.display = "none";
         document.getElementById("ll0" + x).style.display = "none";
 
-        document.getElementById("tl" + x).value = 0;
+        document.getElementById("tl" + x).value = "Undefined";
         document.getElementById("tl" + x).style.display = "none";
         document.getElementById("tl0" + x).style.display = "none";
-        document.getElementById("p" + x).value = 0;
+        document.getElementById("p" + x).value = "Undefined";
         document.getElementById("p" + x).style.display = "none";
         document.getElementById("p0" + x).style.display = "none";
+        document.getElementById("as" + x).value = "Undefined";
+        document.getElementById("as" + x).style.display = "none";
+        document.getElementById("as0" + x).style.display = "none";
 
 
     }
@@ -136,7 +595,7 @@ function numberOfAreas() {
     document.getElementById(n.toString()).onchange = function functionReff() {
         let n = parseInt(document.getElementById("noa").value);
 
-        let oir= parseFloat(document.getElementById("oir").value);
+        let oir = parseFloat(document.getElementById("oir").value);
         let x;
         let reff = 0;
         let reff1 = 0;
@@ -163,14 +622,14 @@ function numberOfAreas() {
     }
     document.getElementById("rnos" + n.toString()).onchange = function functionAieff() {
 
-        let wd= parseFloat(document.getElementById("wd").value);
-        let adeck= parseFloat(document.getElementById("adeck").value);
+        let wd = parseFloat(document.getElementById("wd").value);
+        let adeck = parseFloat(document.getElementById("adeck").value);
         let rll = parseFloat(document.getElementById("rll").value);
         let wp = parseFloat(document.getElementById("wp").value);
         let aleg = parseFloat(document.getElementById("aleg").value);
 
 
-        let tl=0;
+        let tl = 0;
         for (let i = 1; i < n + 1; i++) {
             x = i.toString();
 
@@ -178,19 +637,18 @@ function numberOfAreas() {
             let y = parseInt(document.getElementById("rnos" + x).value);
             let aieff = parseFloat(document.getElementById("aeff" + x).value) / parseFloat(document.getElementById("rnos" + x).value);
             document.getElementById("aieff" + x).value = aieff;
-            let dl= wd * aieff / adeck * 9.81 / 1000;
-            document.getElementById("dl" + x).value =dl;
+            let dl = wd * aieff / adeck * 9.81 / 1000;
+            document.getElementById("dl" + x).value = dl;
             let ll = parseFloat(document.getElementById("aieff" + x).value) * rll / 1000000;
             document.getElementById("ll" + x).value = ll;
-            if(i<n){
-                tl= ll +dl;
-            }
-            else{
-                tl = ll+dl+wp/y*9.81/1000;
+            if (i < n) {
+                tl = ll + dl;
+            } else {
+                tl = ll + dl + wp / y * 9.81 / 1000;
 
             }
-            document.getElementById("tl" + x).value =tl;
-            document.getElementById("p" + x).value =tl/aleg*1000;
+            document.getElementById("tl" + x).value = tl;
+            document.getElementById("p" + x).value = tl / aleg * 1000;
 
         }
 
@@ -210,8 +668,6 @@ function part4() {
     let pod = parseFloat(document.getElementById("pod").value);
     let slz = parseFloat(document.getElementById("slz").value);
     let pth = parseFloat(document.getElementById("pth").value);
-
-
 
 
     let pid = pod - (2 * pth);
@@ -521,7 +977,7 @@ function rainWater() {
     let wrain = vrain * 1000;
     let ubl = ((Math.PI / 4) * Math.pow(oir, 2) * hdeckr * pp * 1000) / 1000000000;
     let dl = wrain + wd;
-    let ndfad = Math.abs((ubl - dl) / (adeck/1000000));
+    let ndfad = Math.abs((ubl - dl) / (adeck / 1000000));
     let q2 = ndfad * 9.81 / 1000000;
     document.getElementById("q2").value = q2;
     document.getElementById("adeck1").value = adeck;
@@ -647,8 +1103,7 @@ function pontoonStressDesign() {
     document.getElementById("a0").value = a;
 
 
-    a= a*(Math.PI/180)
-
+    a = a * (Math.PI / 180)
 
 
     let bm1 = ((rh1 * oir) / 4) * ((1 / Math.sin(a)) - (1 / a));
@@ -695,7 +1150,7 @@ function pontoonStressDesign() {
     }
 
     bm1 = ((rh2 * oir) / 4) * ((1 / Math.sin(a)) - (1 / a));
-    bm2 =(-1)* ((rh2 * oir) / 4) * ((1 / a) - (1 / Math.tan(a)));
+    bm2 = (-1) * ((rh2 * oir) / 4) * ((1 / a) - (1 / Math.tan(a)));
     cf1 = rh2 / (2 * Math.sin(a));
     cf2 = rh2 / (2 * Math.tan(a));
     bs1 = bm1 / za;
@@ -732,7 +1187,6 @@ function pontoonStressDesign() {
 }
 
 
-
 function operationFloatationLevel() {
 
     let oor = parseFloat(document.getElementById("oor").value);
@@ -754,6 +1208,41 @@ function operationFloatationLevel() {
     document.getElementById("vr").value = vr;
 
 
+}
+
+function allowableStress() {
+    let k = parseFloat(document.getElementById("elf").value);
+    let l = parseFloat(document.getElementById("lsp1").value);
+    let rx = parseFloat(document.getElementById("rg").value);
+    let e = parseFloat(document.getElementById("modulusOfElasticity2").value);
+    let sy = parseFloat(document.getElementById("specificMinimumYieldStress2").value);
+    let lambda = k * l / rx;
+    let cc = Math.sqrt((2 * Math.pow(Math.PI, 2) * e) / sy);
+    document.getElementById("sr").value = lambda;
+    document.getElementById("cc").value = cc;
+    let c1 = ((1 - (Math.pow(lambda, 2) / (2 * Math.pow(cc, 2)))) * sy) / ((5 / 3) + (3 * lambda / (8 * cc)) - Math.pow(lambda, 3) / (8 * Math.pow(cc, 3)));
+    let c2 = ((12 * Math.pow(Math.PI, 2) * e) / (23 * Math.pow(lambda, 2)));
+    let c;
+    if (lambda < cc) {
+        c = c1;
+    } else if (lambda <= 120) {
+        c = c2;
+    } else if (lambda <= 200) {
+
+        c = (Math.min(c1, c2) / (1.6 - (lambda / 200)));
+
+    }
+    document.getElementById("scall").value = parseFloat(c).toFixed(3);
+    let n = parseInt(document.getElementById("noa").value);
+    let x;
+    for (let i = 1; i < n + 1; i++) {
+        x = i.toString();
+        if ((c - parseFloat(document.getElementById("p" + x).value)) > 0) {
+            document.getElementById("as" + x).value = "Satisfactory";
+        }
+        else
+            document.getElementById("as" + x).value = "Unsatisfactory"
+    }
 }
 
 function showTab(n) {

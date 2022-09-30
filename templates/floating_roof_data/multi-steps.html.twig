@@ -21,7 +21,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li><a id="len2" class="hoverable" href="{{ path('app_logout') }}">logout</a></li>
+                <li><a id="len2" class="hoverable text-dark flex-direction :end "  href="{{ path('app_logout') }}">logout</a></li>
+                <li><a id="len2" class="hoverable text-dark" href="{{ path('admin') }}">Admin Dashboard</a></li>
             </ul>
         </div>
     </div>
@@ -31,7 +32,7 @@
     <p class="text-justify mt-3">This tool performs calculations for pipeline highway crossing design as per calculation
         methods published in API RP 1102.</p>
     <form id="regForm">
-        <div class="tab d-flex gap-3 form-group">
+          <div class="tab d-flex gap-3 form-group">
             <div class="card bg-shadow col-6">
                 <div class="card-body">{% include "form-fragments/child_0.html.twig" %}</div>
             </div>
@@ -157,7 +158,10 @@
         </div>
         <div class="tab d-flex gap-3 form-group">
             <div class="card bg-shadow col-6">
-                <div class="card-body" data-image="fig15.png">{% include "form-fragments/child_30.html.twig" %}</div>
+                <div class="card-body" >{% include "form-fragments/child_30.html.twig" %}</div>
+            </div>
+            <div class="card bg-shadow col-6">
+                <div class="card-body" data-image="fig15.png">{% include "form-fragments/child_31.html.twig" %}</div>
             </div>
             <div>
                 <button type="button" id="toPdf" name="toPdf">Export</button>

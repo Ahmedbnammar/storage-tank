@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\TankGeometryData;
 use App\Form\TankGeometryDataType;
 
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,12 +16,13 @@ class FloatingRoofDataController extends AbstractController
     #[Route('/floating/roof/data', name: 'app_floating_roof_data')]
     public function index(Request $request): Response
     {
-        $tankGeometryData=new TankGeometryData();
-        $form= $this->createForm(TankGeometryDataType::class,$tankGeometryData);
+
+
+        $tankGeometryData = new TankGeometryData();
+        $form = $this->createForm(TankGeometryDataType::class, $tankGeometryData);
         $form->handleRequest($request);
         $tankGeometryData->setId(30);
         $form->handleRequest($request);
-
 
 
         /*
@@ -57,7 +59,6 @@ class FloatingRoofDataController extends AbstractController
                          die;
 
                      }*/
-
 
 
         return $this->render('floating_roof_data/multi-steps.html.twig', [

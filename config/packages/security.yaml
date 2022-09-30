@@ -1,4 +1,5 @@
 security:
+    access_denied_url: /floating/roof/data
     enable_authenticator_manager: true
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
@@ -33,8 +34,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/floating/roof/data, roles: ROLE_USER}
+        - { path: ^/floating/roof/data, roles: ROLE_ADMIN}
         # - { path: ^/login, roles: IS_A }
-        # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/floating/roof/data, IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
