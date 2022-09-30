@@ -616,7 +616,7 @@ function numberOfAreas() {
         document.getElementById("reff" + (n - 1).toString()).value = reff1;
         document.getElementById("aeff" + (n - 1).toString()).value = Math.PI * (Math.pow(reff1, 2) - Math.pow(reff, 2));
         document.getElementById("reff" + n.toString()).value = (oir / 2);
-        document.getElementById("aeff" + n.toString()).value = Math.PI * (Math.pow((oir / 2), 2) - (Math.pow(reff1, 2)));
+        document.getElementById("aeff" + n.toString()).value = Math.PI * (Math.pow((oir / 2), 2) - (Math.pow(reff1, 2))).toFixed(3);
 
 
     }
